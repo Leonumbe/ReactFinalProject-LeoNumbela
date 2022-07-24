@@ -1,0 +1,37 @@
+/*css sobre componente navbar*/
+
+.NavBar{
+    background: rgb(214, 214, 214);
+    width: 100%;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu{
+    display: flex ;
+}
+.menu li{
+    list-style: none;
+    display: inline-block;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.NavBar .menu li a:hover{
+    color: crimson;
+}
