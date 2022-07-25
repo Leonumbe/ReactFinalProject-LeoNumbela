@@ -5,7 +5,7 @@ function NavBar(){
         <header>
             <nav id="" className="NavBar">
                 <div className="max-width">
-                    <div className="logo"><a href="#">Logo</a></div>
+                    <div className="contLogo"><a href="#"><img className="logo" src="./logoAdap.png"/></a></div>
                     <ul className="menu">
                         <li><a href="" className="">Home</a></li>
                         <li><a href="" className="">About Us</a></li>
@@ -13,7 +13,9 @@ function NavBar(){
                         <li><a href="" className="">Faqs</a></li>
                         <li><a href="" className="">Contact Us</a></li>
                     </ul>
-                    <div className="chart"><a href="">chart</a></div>
+                    <div className="cart">
+                        <a href=""><i className="fas fa-shopping-cart cartSet"></i></a>
+                    </div>
 
                 </div>
             </nav>

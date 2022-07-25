@@ -17,6 +17,13 @@
     justify-content: space-between;
     align-items: center;
 }
+.logo{
+    width: 75px;
+    transition: all 0.3s ease;
+}
+.logo:hover{
+    transform: scale(1.15);
+}
 .menu{
     display: flex ;
 }
@@ -33,5 +40,13 @@
     transition: color 0.3s ease;
 }
 .NavBar .menu li a:hover{
-    color: crimson;
+    color: rgb(207, 173, 19);
+}
+.cartSet{
+    color: rgb(65, 65, 65);
+    font-size: 30px;
+    transition: all 0.3s ease;
+}
+.cartSet:hover{
+    transform: scale(1.15);
 }
