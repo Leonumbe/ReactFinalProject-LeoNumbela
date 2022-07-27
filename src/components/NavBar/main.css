@@ -42,11 +42,3 @@
 .NavBar .menu li a:hover{
     color: rgb(207, 173, 19);
 }
-.cartSet{
-    color: rgb(65, 65, 65);
-    font-size: 30px;
-    transition: all 0.3s ease;
-}
-.cartSet:hover{
-    transform: scale(1.15);
-}

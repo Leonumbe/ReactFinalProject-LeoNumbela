@@ -3,9 +3,9 @@ import "./main.css";
 function ItemListContainer(props){
     //console.log(props.data)
     return(
-        <section className="room" id="Rooms">
-            <div className="maw-witch">
-                <h1 className="title">{props.data.title}</h1>
+        <section className="title" id="Home">
+            <div className="max-width">
+                <h1 className="title">{props.greeting}</h1>
             </div>
         </section>
     )

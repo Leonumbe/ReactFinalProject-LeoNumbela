@@ -1,6 +1,5 @@
 /*css sobre home*/
 
-
 .mainTittle{
     height: 60vh;
     display: flex;
@@ -9,4 +8,9 @@
     align-items: center;
     margin: 0 10rem;
     text-align: center;
+    font-family:  'Inter', sans-serif;
+    font-weight: 700;
+    color: #353d45;
+    font-size: 25px;
+    padding: 20px 0px;
 }

@@ -14,7 +14,7 @@ function App() {
     <div className="Body">
       <Router>
         <NavBar/>
-        <ItemListContainer data={headTittle}/>
+        <ItemListContainer greeting = "Nuestros Productos"/>
         <h1 className='mainTittle'>{headTittle.subtitle}</h1>
         <Footer/>
       </Router>
