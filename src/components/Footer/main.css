@@ -21,13 +21,13 @@ Footer{
     padding: 10px 0;
   
   }
-  Footer .social i{
+  Footer .social .i{
     font-size: 30px;
     color: #353d45;
     transition: all 0.3s easy;
     padding: 0 5px;
   }
-  Footer .social i:hover{
+  Footer .social .i:hover{
     transform: scale(1.15);
     color: crimson;
   }
