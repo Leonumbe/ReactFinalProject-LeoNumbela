@@ -9,7 +9,7 @@ function NavBar(){
                 <div className="max-width">
                     <div className="containerNavbar">
                         <div className="contLogo">
-                            <img className="logo" src="/LogoAdap.png" alt='bakers team logo'/>
+                            <img className="logo" src="./LogoAdap.png" alt='bakers team logo'/>
                         </div>
                         <ul className="menu">
                             <li><Link to="/" className="">Home</Link></li>

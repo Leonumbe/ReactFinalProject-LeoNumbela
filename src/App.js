@@ -8,7 +8,7 @@ import ItemListContainer from './components/ItemListContainer/index';
 import ItemCount from "./components/ItemCount/index";
 import Footer from './components/Footer/index'
 //toastify
-import { toast, ToastContainer} from 'react-toastify';
+import {ToastContainer} from 'react-toastify';
 
 
 const headTittle = {
