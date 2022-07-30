@@ -10,4 +10,4 @@ function ItemListContainer(props){
         </section>
     )
 }
-export default ItemListContainer ;
+export default ItemListContainer;

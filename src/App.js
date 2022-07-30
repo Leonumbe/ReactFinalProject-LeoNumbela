@@ -1,11 +1,14 @@
+//css
 import './App.css';
-import NavBar from './components/NavBar/index';
+//router
 import {BrowserRouter as Router} from "react-router-dom";
+//componentes
+import NavBar from './components/NavBar/index';
 import ItemListContainer from './components/ItemListContainer/index';
 import ItemCount from "./components/ItemCount/index";
 import Footer from './components/Footer/index'
-import { ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+//toastify
+import { toast, ToastContainer} from 'react-toastify';
 
 
 const headTittle = {
