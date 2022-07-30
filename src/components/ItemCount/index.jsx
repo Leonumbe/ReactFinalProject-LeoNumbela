@@ -26,7 +26,7 @@ const ItemCount = ({minStock, maxStock}) => {
     return(  
         <div className="max-width">
             <div className="d-grid gap-2 d-md-flex justify-content-st-center">
-                <button onClick={clickDecrease} className="btn btn-secondary btn-sm" type="button">-</button>
+                <button onClick={clickDecrease} className="btn btn-secondary btn-sm " type="button">-</button>
                     <h1>{count}</h1>
                 <button onClick={clickIncrease} className="btn btn-secondary btn-sm" type="button">+</button>
             </div>
