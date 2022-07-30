@@ -12,6 +12,9 @@
     max-width: 1300px;
     padding: 0 80px;
     margin: auto;
+ 
+}
+.containerNavbar{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;

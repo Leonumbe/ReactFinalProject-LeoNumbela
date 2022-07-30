@@ -12,10 +12,10 @@ function Footer(){
         <footer>
             <span>Create by <Link to="/">LeoN.</Link> | <span><FontAwesomeIcon icon={faCopyright} /></span> 2022 All right reserved.</span>
             <div className="social">
-                <a href="http://www.linkedin.com/in/leonardo-numbela-63942254" target="_blank">
+                <a href="http://www.linkedin.com/in/leonardo-numbela-63942254" target="blank">
                     <FontAwesomeIcon className="i" icon={faLinkedin} /> 
                 </a>
-                <a href="https://www.instagram.com/leonumbela/" target="_blank">
+                <a href="https://www.instagram.com/leonumbela/" target="blank">
                     <FontAwesomeIcon className="i" icon={faInstagram}/>
                 </a>
             </div>
