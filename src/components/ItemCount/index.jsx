@@ -23,14 +23,15 @@ const ItemCount = ({minStock, maxStock}) => {
             progress: undefined,
             });
     }
+
     return(  
         <div className="max-width">
-            <div className="d-grid gap-2 d-md-flex justify-content-st-center">
+            <div className="d-grid gap-2 d-sm-flex justify-content-st-center">
                 <button onClick={clickDecrease} className="btn btn-secondary btn-sm " type="button">-</button>
                     <h1>{count}</h1>
                 <button onClick={clickIncrease} className="btn btn-secondary btn-sm" type="button">+</button>
             </div>
-            <div className="d-grid gap-2 d-md-flex justify-content-st-center btn-sm mt-2" >
+            <div className="d-grid gap-2 d-sm-flex justify-content-st-center btn-sm mt-2" >
                 <button onClick={addCart} type="button" className="btn btn-outline-dark">Add Cart</button> 
             </div>
         </div>
