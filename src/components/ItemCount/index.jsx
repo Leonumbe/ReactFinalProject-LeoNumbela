@@ -13,7 +13,7 @@ const ItemCount = ({minStock, maxStock}) => {
         return (count > minStock)? setClicks(count - 1): false;
     }
     const addCart = () => {
-        toast.success('Great! You add '+ count +' unit/s', {
+        toast.success('Great! You added '+ count +' unit/s', {
             position: "top-center",
             autoClose: 1500,
             hideProgressBar: false,
