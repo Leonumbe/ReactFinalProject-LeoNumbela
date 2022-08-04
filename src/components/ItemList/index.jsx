@@ -8,7 +8,6 @@ function getProducts(){
 };
 
 export default function ItemList() {
-    getProducts();
 
     const [data, setData] = useState([]);
    
