@@ -9,14 +9,6 @@ import ItemCount from "./components/ItemCount/index";
 import Footer from './components/Footer/index'
 //toastify
 import {ToastContainer} from 'react-toastify';
-//Boostrap
-import * as bootstrap from 'bootstrap';
-
-// Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap'
-import * as Popper from "@popperjs/core"
-//booostrap css
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const headTittle = {

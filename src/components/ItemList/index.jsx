@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import itemsData from "../../api-data/index";
-import Card from "../Item/index.jsx"
+import Cards from "../Item/index.jsx"
+
 
 function getProducts(){
     return new Promise((resolve)=>{
-        setTimeout( () => resolve(itemsData), 5000)
+        setTimeout( () => resolve(itemsData), 1000)
     })
 };
 
@@ -20,9 +21,8 @@ export default function ItemList() {
     return(
     <>
     {data.map((items) =>{
-        
         return(
-            <Card
+            <Cards
                 key={items.id}
                 name={items.name}
                 image={items.image}

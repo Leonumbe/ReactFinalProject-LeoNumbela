@@ -1,6 +1,10 @@
+import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import React from "react";
+import "./main.css"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const ItemCount = ({minStock, maxStock}) => {
 
@@ -25,14 +29,14 @@ const ItemCount = ({minStock, maxStock}) => {
     }
 
     return(  
-        <div className="max-width">
-            <div className="d-grid gap-2 d-sm-flex justify-content-st-center">
-                <button onClick={clickDecrease} className="btn btn-secondary btn-sm " type="button">-</button>
+        <div className="">
+            <div className="counterSelector">
+                <h1 onClick={clickDecrease} className="btnCounterA " type="button">-</h1>
                     <h1>{count}</h1>
-                <button onClick={clickIncrease} className="btn btn-secondary btn-sm" type="button">+</button>
+                <h1 onClick={clickIncrease} className="btnCounterB" type="button">+</h1>
             </div>
-            <div className="d-grid gap-2 d-sm-flex justify-content-st-center btn-sm mt-2" >
-                <button onClick={addCart} type="button" className="btn btn-outline-dark">Add Cart</button> 
+            <div className="d-grid gap-2 d-sm-flex justify-content-center" >
+                <button onClick={addCart}  className="btnAdd">Add Cart</button> 
             </div>
         </div>
     );
