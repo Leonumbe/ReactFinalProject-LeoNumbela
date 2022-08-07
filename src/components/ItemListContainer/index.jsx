@@ -1,17 +1,31 @@
-import ItemList from "../ItemList/index.jsx";
 import "./main.css";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React, { useEffect, useState } from "react";
+import itemsData from "../../api-data/index";
+import ItemList from "../ItemList/index.jsx";
+
+
+function getProducts(){
+    return new Promise((resolve)=>{
+        setTimeout( () => resolve(itemsData), 2000)
+    })
+};
 
 function ItemListContainer(props){
-    //console.log(props.data)
+
+    const [data, setData] = useState([]);
+    
+    useEffect(() => {
+        getProducts().then((respuesta) => {
+            setData(respuesta);
+        });
+    }, []);
+
     return(
         <section className="title" id="Home">
             <div className="max-width ">
                 <h1 className="title">{props.greeting}</h1>
                 <div className= " d-flex flex-row flex-wrap">
-                    <ItemList/>
+                    <ItemList data={data}/>
                 </div>
             </div>
         </section>

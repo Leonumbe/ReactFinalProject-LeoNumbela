@@ -21,8 +21,7 @@ function App() {
     <div className="Body">
       <Router>
         <NavBar/>
-        <ItemListContainer greeting = "Nuestros Productos"/>
-        <ItemCount minStock={1} maxStock={5}/>
+        <ItemListContainer greeting = "Our Products"/>
         <h1 className='mainTittle'>{headTittle.subtitle}</h1>
         <Footer/>
         <ToastContainer />
