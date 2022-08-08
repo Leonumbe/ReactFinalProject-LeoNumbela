@@ -1,14 +1,8 @@
 import "./main.css";
 import React, { useEffect, useState } from "react";
-import itemsData from "../../api-data/index";
 import ItemList from "../ItemList/index.jsx";
+import getProducts from "../../Helpers/index";
 
-
-function getProducts(){
-    return new Promise((resolve)=>{
-        setTimeout( () => resolve(itemsData), 2000)
-    })
-};
 
 function ItemListContainer(props){
 
