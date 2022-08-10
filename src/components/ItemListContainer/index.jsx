@@ -1,7 +1,8 @@
 import "./main.css";
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/index.jsx";
-import getProducts from "../../Helpers/index";
+import getProducts from "../../Helpers/indexDetail";
+import itemsData from "../../Api-data";
 
 
 function ItemListContainer(props){
