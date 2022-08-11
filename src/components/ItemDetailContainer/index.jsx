@@ -25,7 +25,7 @@ export default function ItemDetailContainer(){
                            name={data.name}
                            image={data.image}
                            rating={data.rating}
-                           productType={data.productType}
+                           category={data.category}
                            price={data.price}
                            description={data.description}
                         />

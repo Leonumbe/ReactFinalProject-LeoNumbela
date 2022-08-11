@@ -11,8 +11,8 @@ import Navbar from 'react-bootstrap/Navbar';
 function NavBar(){
     const menu = [  {url:'/', title:'Products'},
                     {url:'/detail/4', title:'A Product'},
-                    {url:'/', title:'About us'},
-                    {url:'/', title:'Contact us'},
+                    {url:'/category/Boot', title:'Boots'},
+                    {url:'/category/Running', title:'Running'},
                 ]
     
     return(

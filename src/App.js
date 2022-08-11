@@ -26,6 +26,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path='/' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
+          <Route path='/category/:category' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
           <Route path="/detail/:id" element={<ItemDetailContainer greeting = {headTitle.subtitle} itemId = {3}/>}></Route>
           <Route path='*' element={<h1 className='error'>{Error.title}</h1>}></Route>
         </Routes>

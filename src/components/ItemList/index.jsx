@@ -12,7 +12,7 @@ export default function ItemList({data}) {
                         name={items.name}
                         image={items.image}
                         rating={items.rating}
-                        productType={items.productType}
+                        category={items.category}
                         price={items.price}
                         description={items.description}
                     />

@@ -1,13 +1,14 @@
 import React from "react";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ItemCount from "../ItemCount";
 
 const mg={
     marginLeft: "31px",
     width:"100"
   }
 
-export default function CardsSelected({id, name, productType, price, rating, image, description}){
+export default function CardsSelected({id, name, category, price, rating, image, description}){
 
     return (
         <>
@@ -20,7 +21,7 @@ export default function CardsSelected({id, name, productType, price, rating, ima
                     <div className="col-md-8 col-xl-8">
                         <div className="card-body my-3">
                             <h2 className="card-title">{name}</h2>
-                            <h5 className="card-subtitle">{productType}</h5>
+                            <h5 className="card-subtitle">{category}</h5>
                             <div>
                                 {Array(rating)
                                     .fill()
@@ -30,6 +31,7 @@ export default function CardsSelected({id, name, productType, price, rating, ima
                             </div>
                             <h1 className="card-title">u$s {price}.00-</h1>
                             <p className="card-text">{description}</p>
+                            <ItemCount minStock={1} maxStock={5}/>
                             <p className="card-text"><small className="text-muted">End your purchase</small></p>
                         </div>
                     </div>
