@@ -1,7 +1,7 @@
 /*css sobre home*/
 
-.mainTittle{
-    height: 30vh;
+.error{
+    height: 60vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

@@ -1,18 +1,13 @@
 import itemsData from "../Api-data/index";
 
 
-export default function getProducts({itemId}){
-    let itemFilter = itemsData
-   if (itemFilter) {
-       return new Promise((resolve)=>{
-           itemFilter = itemsData.find(element => itemId === element.id)
-           setTimeout( () => resolve(itemFilter), 1000)
-       })
-    
-   } else{
-    return new Promise((resolve)=>{
-        setTimeout( () => resolve(itemsData), 2000)
-    })
-
-   }
+export default function getProducts({idUrl}){
+       return new Promise((resolve, reject)=>{
+           let itemSelected = itemsData.find(element => element.id == idUrl)
+           if (itemSelected == undefined){
+               reject(alert("No se encontro el producto solicitado"))
+            }else{
+                setTimeout( () => resolve(itemSelected), 1000)
+            }
+        })
 };

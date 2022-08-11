@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faStar} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 //css directo
 const iStar={
@@ -26,6 +27,7 @@ function Cards({ id, name, productType, price, rating, image, description }) {
                 ))}
             </div>
             <ItemCount minStock={1} maxStock={5}/>
+            <Link to={`/detail/${id}`}>ver seleccion</Link>
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="1" className="mt-3">
                 <Accordion.Header>Description:</Accordion.Header>

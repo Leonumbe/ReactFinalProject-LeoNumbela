@@ -24,7 +24,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: start;
-    align-items: flex-start;
+    align-items: center;
 }
 .logo{
     width: 75px;
@@ -36,18 +36,22 @@
 .menu{
     display: flex ;
 }
-.menu li{
+.contMenu{
     list-style: none;
     display: inline-block;
+
 }
-.menu li a{
+.contMenu a{
+    list-style: none;
     text-decoration: none;
     color: white;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
+    margin-top: 10px;
     margin-left: 25px;
+    margin-bottom: 0;
     transition: color 0.3s ease;
 }
-.NavBar .menu li a:hover{
+.contMenu a:hover{
     color: rgb(207, 173, 19);
 }
