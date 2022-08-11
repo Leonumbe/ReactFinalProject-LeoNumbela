@@ -1,13 +1,13 @@
 import itemsData from "../Api-data/index";
 
 
-export default function getProductsCat({filterCat}){
+export default function getProductsCat(filterCat){
        return new Promise((resolve, reject)=>{
-           let filtCat = itemsData.filter(element => element.category == filterCat)
-           if (filtCat == undefined){
+           let CatFilter = itemsData.filter(element => element.category === filterCat)
+           if (CatFilter == undefined){
                reject(alert("No se encontro el producto solicitado"))
             }else{
-                setTimeout( () => resolve(filtCat), 1000)
+                setTimeout( () => resolve(CatFilter), 3000)
             }
         })
 };

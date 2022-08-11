@@ -1,4 +1,3 @@
-import ItemCount from "../ItemCount"
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

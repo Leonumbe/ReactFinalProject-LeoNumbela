@@ -2,15 +2,19 @@ import "./main.css";
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/index.jsx";
 import getProducts from "../../Helpers/index";
-import itemsData from "../../Api-data";
-
+import { useParams } from "react-router-dom";
+import getProductsCat from "../../Helpers/indexCat";
 
 function ItemListContainer(props){
-
+    const filterCat = useParams().category
+    console.log(filterCat)
     const [data, setData] = useState([]);
     
     useEffect(() => {
         getProducts().then((respuesta) => {
+            setData(respuesta);
+        });
+        getProductsCat(filterCat).then((respuesta) => {
             setData(respuesta);
         });
     }, []);
