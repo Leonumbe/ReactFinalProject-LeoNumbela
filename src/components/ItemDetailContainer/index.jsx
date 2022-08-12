@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import CardsSelected from "../ItemDetail"
-import getProducts from "../../Helpers/conclusion";
+import getProducts from "../../Helpers/indexDetail";
 import { useParams } from "react-router-dom";
 
 
@@ -11,8 +11,8 @@ export default function ItemDetailContainer(){
     useEffect(() => {
         getProducts(idUrl)
         .then((respuesta) => setData(respuesta))
-        .catch((error)=> alert(error))
-    }, []);
+        
+    }, [idUrl]);
     return(
             <section className="title" id="Home">
                 <div className="max-width ">

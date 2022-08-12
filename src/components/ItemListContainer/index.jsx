@@ -3,23 +3,22 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/index.jsx";
 import getProducts from "../../Helpers/index";
 import { useParams } from "react-router-dom";
-import getProductsCat from "../../Helpers/conclusion";
+import getProductsCat from "../../Helpers/indexCat";
 
-function ItemListContainer(props){
+export default function ItemListContainer(props){
+    const [data, setData] = useState([]);
     const filterCat = useParams().category
     console.log(filterCat)
-    const [data, setData] = useState([]);
     
-    getProducts(filterCat);
-
     useEffect(() => {
-        getProducts(filterCat).then((respuesta) => {
+        getProducts()
+        .then((respuesta) => {setData(respuesta)
+        
+        });
+        getProductsCat(filterCat).then((respuesta) => {
             setData(respuesta);
         });
-        // getProductsCat(filterCat).then((respuesta) => {
-        //     setData(respuesta);
-        // });
-    }, []);
+    }, [filterCat]);
 
     return(
         <section className="title" id="Home">
@@ -32,4 +31,3 @@ function ItemListContainer(props){
         </section>
     )
 }
-export default ItemListContainer;

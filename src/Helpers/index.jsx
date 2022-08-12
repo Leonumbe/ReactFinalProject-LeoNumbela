@@ -2,7 +2,12 @@ import itemsData from "../Api-data/index.jsx";
 
 
 export default function getProducts(){
-    return new Promise((resolve)=>{
-        setTimeout( () => resolve(itemsData), 2000)
-    })
+    if (itemsData != undefined) {
+        return new Promise((resolve)=>{
+            setTimeout( () => resolve(itemsData), 2000)
+        
+        })
+    } else {
+        console.log("error")
+    }
 };
