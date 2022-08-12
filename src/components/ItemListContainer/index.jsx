@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/index.jsx";
 import getProducts from "../../Helpers/index";
 import { useParams } from "react-router-dom";
-import getProductsCat from "../../Helpers/indexCat";
+import getProductsCat from "../../Helpers/conclusion";
 
 function ItemListContainer(props){
     const filterCat = useParams().category
@@ -11,12 +11,12 @@ function ItemListContainer(props){
     const [data, setData] = useState([]);
     
     useEffect(() => {
-        getProducts().then((respuesta) => {
+        getProducts(filterCat).then((respuesta) => {
             setData(respuesta);
         });
-        getProductsCat(filterCat).then((respuesta) => {
-            setData(respuesta);
-        });
+        // getProductsCat(filterCat).then((respuesta) => {
+        //     setData(respuesta);
+        // });
     }, []);
 
     return(

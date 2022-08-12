@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import CardsSelected from "../ItemDetail"
-import getProducts from "../../Helpers/indexDetail";
+import getProducts from "../../Helpers/conclusion";
 import { useParams } from "react-router-dom";
 
 
@@ -9,7 +9,7 @@ export default function ItemDetailContainer(){
     const [data, setData] = useState([]);
     
     useEffect(() => {
-        getProducts({idUrl})
+        getProducts(idUrl)
         .then((respuesta) => setData(respuesta))
         .catch((error)=> alert(error))
     }, []);
