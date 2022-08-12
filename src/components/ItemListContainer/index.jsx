@@ -10,6 +10,8 @@ function ItemListContainer(props){
     console.log(filterCat)
     const [data, setData] = useState([]);
     
+    getProducts(filterCat);
+
     useEffect(() => {
         getProducts(filterCat).then((respuesta) => {
             setData(respuesta);
