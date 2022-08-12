@@ -1,5 +1,5 @@
 const itemsData = [
-    {
+    { 
         id:1,
         name: "Nike",
         category: "Boot",

@@ -1,4 +1,4 @@
-import itemsData from "../Api-data/index.jsx";
+import itemsData from "../api-data/index.jsx";
 
 
 export default function getProducts(idUrl, filterCat) {
