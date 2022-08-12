@@ -7,10 +7,14 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function NavBar(){
+    const menu = [  {url:'/', title:'Products'},
+                    {url:'/detail/4', title:'A Product'},
+                    {url:'/category/Boot', title:'Boots'},
+                    {url:'/category/Running', title:'Running'},
+                ]
+    
     return(
         <header>
             <nav id="" className="NavBar">
@@ -18,55 +22,37 @@ function NavBar(){
                     <div className="containerNavbar">
                         <div className="contNavB">
                         <div className="contLogo">
+                            <Link to ="/">
                             <img className="logo" src="/LogoAdap.png" alt='bakers team logo'/>
+                            </Link>
                         </div>
                         <Navbar  expand="md">
-                         <Container fluid>
-                         <Navbar.Toggle aria-controls="navbarScroll" />
-                         <Navbar.Collapse id="navbarScroll">
-                            <Nav
-                                className="me-auto mb-0 mt-5my-2 my-lg-0"
-                                style={{ maxHeight: '200px' }}
-                                navbarScroll
-                            >
-                                <Nav.Link href="#action1">About Us</Nav.Link>
-                                <Nav.Link href="#action2">Products</Nav.Link>
-                                <Nav.Link href="#action2">Faqs</Nav.Link>
-                                <Nav.Link href="#action2">Contact Us</Nav.Link>
-                            </Nav>
-                        </Navbar.Collapse>
-                        </Container>
-                    </Navbar>
-
+                            <Container fluid>
+                                <Navbar.Toggle aria-controls="navbarScroll" />
+                                <Navbar.Collapse id="navbarScroll">
+                                    <Nav className=" contMenu"
+                                        style={{ maxHeight: '200px' }} navbarScroll>
+                                            {menu.map((data => <Link to={data.url}> {data.title} </Link>))}
+                                    </Nav>
+                                </Navbar.Collapse>
+                            </Container>
+                        </Navbar>
                     </div>
-
                        <div>
                         <CartWidget/>
                        </div>
                     </div>
                     <div>
-                    
+                        <Form className="d-flex">
+                            <Form.Control
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                            />
+                            <Button variant="outline-success">Search</Button>
+                        </Form>
                     </div>
-                   
-                    <div>
-                   
-                            <Form className="d-flex">
-                                <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                                />
-                                <Button variant="outline-success">Search</Button>
-                            </Form>
-  
-
-
-
-                    </div>
-
-
-
                 </div>
             </nav>
         </header>

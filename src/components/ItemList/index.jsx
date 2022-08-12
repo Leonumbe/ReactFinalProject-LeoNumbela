@@ -7,11 +7,12 @@ export default function ItemList({data}) {
             {data.map((items) =>{
                 return(
                     <Cards
-                    key={items.id}
+                        key={items.id}
+                        id={items.id}
                         name={items.name}
                         image={items.image}
                         rating={items.rating}
-                        productType={items.productType}
+                        category={items.category}
                         price={items.price}
                         description={items.description}
                     />
