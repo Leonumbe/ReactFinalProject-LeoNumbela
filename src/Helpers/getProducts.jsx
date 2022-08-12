@@ -2,11 +2,11 @@ import itemsData from "../Api-data/index.jsx";
 
 
 export default function getProducts(idUrl, filterCat) {
-       return new Promise((resolve, reject)=>{
-        if(filterCat !== undefined){
+    return new Promise((resolve, reject)=>{
+        if(filterCat){
             let categoryFilter = itemsData.filter(element => element.category === filterCat)
             setTimeout( () => resolve(categoryFilter), 3000)
-        }else if(idUrl !== undefined){
+        }else if(idUrl){
             let itemSelected = itemsData.find(element => element.id == idUrl)
             setTimeout( () => resolve(itemSelected), 1000)
         }else if(itemsData){
@@ -14,7 +14,7 @@ export default function getProducts(idUrl, filterCat) {
         }else{
             reject(alert("No se encontro el producto solicitado"))
         }
-        })
+    })
 };
 
 

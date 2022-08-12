@@ -1,7 +1,7 @@
 import "./main.css";
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/index.jsx";
-import getProducts from "../../Helpers/conclusion";
+import getProducts from "../../Helpers/getProducts";
 import { useParams } from "react-router-dom";
 
 export default function ItemListContainer(props){
