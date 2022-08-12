@@ -5,8 +5,11 @@ import getProducts from "../../Helpers/conclusion";
 import { useParams } from "react-router-dom";
 
 export default function ItemListContainer(props){
-    const filterCat = useParams().category
+    const filterCat = useParams().category;
     const [data, setData] = useState([]);
+    console.log(useParams())    
+    console.log(filterCat)  
+      
     
     useEffect(() => {
         getProducts(filterCat)

@@ -5,15 +5,17 @@ import { useParams } from "react-router-dom";
 
 
 export default function ItemDetailContainer(){
-    const idUrl = useParams().id
+    const idUrl = useParams().id;
     const [data, setData] = useState([]);
+    console.log(idUrl)
+
     
     useEffect(() => {
         getProducts(idUrl)
         .then((respuesta) => setData(respuesta))
         
     }, [idUrl]);
-    
+
     return(
             <section className="title" id="Home">
                 <div className="max-width ">
