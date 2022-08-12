@@ -12,7 +12,8 @@ function ItemListContainer(props){
     useEffect(() => {
         getProducts().then((respuesta) => {
             setData(respuesta);
-        });
+        })
+        .catch((error) =>console.log(error));
     }, []);
 
     return(

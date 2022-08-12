@@ -1,17 +1,16 @@
 import React, {useEffect, useState} from "react";
 import CardsSelected from "../ItemDetail"
-import getProducts from "../../Helpers/indexDetail";
+import getProducts from "../../Helpers/index";
 
 
 export default function ItemDetailContainer({itemId}){
 
     const [data, setData] = useState([]);
-    
+
     useEffect(() => {
-        getProducts({itemId}).then((respuesta) => {
+        getProducts(itemId).then((respuesta) => {
             setData(respuesta);
-        }  
-       );
+        }).catch((error) =>console.log(error));
     }, []);
     return(
             <section className="title" id="Home">
