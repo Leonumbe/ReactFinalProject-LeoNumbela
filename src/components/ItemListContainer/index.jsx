@@ -1,7 +1,7 @@
 import "./main.css";
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/index.jsx";
-import getProducts from "../../Helpers/indexDetail";
+import getProducts from "../../Helpers/index";
 
 
 function ItemListContainer(props){
@@ -11,7 +11,8 @@ function ItemListContainer(props){
     useEffect(() => {
         getProducts().then((respuesta) => {
             setData(respuesta);
-        });
+        })
+        .catch((error) =>console.log(error));
     }, []);
 
     return(
