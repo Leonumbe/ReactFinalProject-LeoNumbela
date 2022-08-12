@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import CardsSelected from "../ItemDetail"
-import getProducts from "../../Helpers/indexDetail";
+import getProducts from "../../Helpers/conclusion";
 import { useParams } from "react-router-dom";
 
 
@@ -13,6 +13,7 @@ export default function ItemDetailContainer(){
         .then((respuesta) => setData(respuesta))
         
     }, [idUrl]);
+    
     return(
             <section className="title" id="Home">
                 <div className="max-width ">
