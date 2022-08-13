@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/index.jsx";
 import getProducts from "../../Helpers/getProducts";
 import { useParams } from "react-router-dom";
+import itemsData from "../../api-data";
 
 
 
@@ -14,8 +15,14 @@ export default function ItemListContainer(props){
       
     
     useEffect(() => {
-        getProducts(filterCat)
-        .then((respuesta) => setData(respuesta));
+        getProducts().then((respuesta) => {
+            if(filterCat){
+            let categoryFilter = itemsData.filter(element => element.category === filterCat)
+            setTimeout( () => setData(categoryFilter), 500)
+        }else{
+            setData(respuesta)
+        }
+        });
        
     }, [filterCat]);
 

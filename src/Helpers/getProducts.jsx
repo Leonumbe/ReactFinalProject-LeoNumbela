@@ -1,12 +1,9 @@
 import itemsData from "../api-data/index.jsx";
 
 
-export default function getProducts(idUrl, filterCat) {
+export default function getProducts(idUrl) {
     return new Promise((resolve, reject)=>{
-        if(filterCat){
-            let categoryFilter = itemsData.filter(element => element.category === filterCat)
-            setTimeout( () => resolve(categoryFilter), 3000)
-        }else if(idUrl){
+        if(idUrl){
             let itemSelected = itemsData.find(element => element.id == idUrl)
             setTimeout( () => resolve(itemSelected), 1000)
         }else if(itemsData){
