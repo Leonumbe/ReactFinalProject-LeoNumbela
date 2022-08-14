@@ -2,6 +2,7 @@ import React from "react";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ItemCount from "../ItemCount";
+import {Link} from "react-router-dom"
 
 const mg={
     marginLeft: "31px",
@@ -33,6 +34,7 @@ export default function CardsSelected({id, name, category, price, rating, image,
                             <p className="card-text">{description}</p>
                             <ItemCount minStock={1} maxStock={5}/>
                             <p className="card-text"><small className="text-muted">End your purchase</small></p>
+                            <Link to='/' className="btnAdd">Back</Link>
                         </div>
                     </div>
                 </div>
