@@ -9,7 +9,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/index';
 import Footer from './components/Footer/index'
 //toastify
 import {ToastContainer} from 'react-toastify';
-
+import UserForm from './components/userForm';
 
 const headTitle = {
   title:"Ours Products ",
@@ -28,8 +28,10 @@ function App() {
           <Route path='/' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
           <Route path='/category/:category' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
           <Route path="/detail/:id" element={<ItemDetailContainer greeting = {headTitle.subtitle} itemId = {3}/>}></Route>
+          <Route path='/contacUs' element={<UserForm/>}></Route>
           <Route path='*' element={<h1 className='error'>{Error.title}</h1>}></Route>
         </Routes>
+        
         <Footer/>
         <ToastContainer />
       </BrowserRouter>
