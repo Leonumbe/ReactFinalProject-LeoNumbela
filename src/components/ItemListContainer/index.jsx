@@ -10,19 +10,18 @@ import itemsData from "../../api-data";
 export default function ItemListContainer(props){
     const filterCat = useParams().category;
     const [data, setData] = useState([]);
-    console.log(useParams())    
-    console.log(filterCat)  
-      
+    //console.log(useParams())    
+    //console.log(filterCat)  
     
     useEffect(() => {
         getProducts().then((respuesta) => {
             if(filterCat){
             let categoryFilter = itemsData.filter(element => element.category === filterCat)
             setTimeout( () => setData(categoryFilter), 500)
-        }else{
+            }else{
             setData(respuesta)
-        }
-        });
+            }
+        }).catch((error) => alert(error));
        
     }, [filterCat]);
 

@@ -15,7 +15,7 @@ export default function CardsSelected({id, name, category, price, rating, image,
         <div>
             <div className="card" style={mg} >
                 <div className="row g-5">
-                    <div className="col-md-4">
+                    <div className="col-md-4" key={id}>
                         <img src={image} className="img-fluid rounded-start" alt="Sneaker"/>
                     </div>
                     <div className="col-md-8 col-xl-8">

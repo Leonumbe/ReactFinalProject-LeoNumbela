@@ -4,7 +4,7 @@ import Cards from "../Item/index.jsx"
 export default function ItemList({data}) {
     return(
         <>
-            {data.map((items) =>{
+            {data?.map((items) =>{
                 return(
                     <Cards
                         key={items.id}
