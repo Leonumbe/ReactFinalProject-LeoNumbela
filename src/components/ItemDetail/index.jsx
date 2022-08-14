@@ -34,11 +34,11 @@ export default function CardsSelected({id, name, category, price, rating, image,
                             <p className="card-text">{description}</p>
                             <ItemCount minStock={1} maxStock={5}/>
                             <p className="card-text"><small className="text-muted">End your purchase</small></p>
-                            <Link to='/' className="btnAdd">Back</Link>
                         </div>
                     </div>
                 </div>
             </div>
+        <Link to='/' className="btnBack">Back</Link>
         </div>
         </>
     );
