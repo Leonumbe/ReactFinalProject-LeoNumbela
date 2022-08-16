@@ -29,7 +29,8 @@ export default function ItemDetailContainer(){
                         category={data.category}
                         price={data.price}
                         description={data.description}
-                    />
+                        Stock={data.Stock}
+                        />
                 </div>
             </div>
         </section>

@@ -1,6 +1,8 @@
 import React from "react";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ItemCount from "../ItemCount";
 import {Link} from "react-router-dom"
 
@@ -9,7 +11,19 @@ const mg={
     width:"100"
   }
 
-export default function CardsSelected({id, name, category, price, rating, image, description}){
+export default function CardsSelected({id, name, category, price, rating, image, description, Stock}){
+
+    function handleAdd(count){
+        toast.success('Great! You added '+ count +' unit/s', {
+            position: "top-center",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    }
 
     return (
         <>
@@ -32,13 +46,15 @@ export default function CardsSelected({id, name, category, price, rating, image,
                             </div>
                             <h1 className="card-title">u$s {price}.00-</h1>
                             <p className="card-text">{description}</p>
-                            <ItemCount minStock={1} maxStock={5}/>
+                            <ItemCount minStock={1} Stock={5} onAddCart={handleAdd}/>
                             <p className="card-text"><small className="text-muted">End your purchase</small></p>
                         </div>
                     </div>
                 </div>
             </div>
-        <Link to='/' className="btnBack">Back</Link>
+            <div className="contBtnBack">
+                <Link to='/' className="btnBack">Back</Link>
+            </div>
         </div>
         </>
     );

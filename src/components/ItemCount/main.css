@@ -1,5 +1,9 @@
 
 
+.counterBtn{
+  text-align: center;
+}
+
 .counterSelector{
     display: flex;
     flex-flow: row nowrap;
@@ -14,23 +18,3 @@
     margin-left: 20px ;
     cursor: pointer;
 }
-.btnAdd, .btnBack{
-  background: linear-gradient(to right, rgb(106, 6, 236), rgb(220, 0, 240));
-  display: inline-block;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  padding: 10px 50px ;
-  border:whitesmoke ;
-  border-radius: 7.5px ;
-  box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  }
-
-  .btnBack{
-    margin: 2rem;
-    display: inline-block;
-    flex-flow: row nowrap;
-    justify-content: center;
-  }

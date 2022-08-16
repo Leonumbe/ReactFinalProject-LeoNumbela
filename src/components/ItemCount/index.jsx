@@ -1,45 +1,32 @@
-import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
-import React from "react";
 import "./main.css"
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+import Button from "../button/index";
+import React, { useState } from "react";
 
 
 
-const ItemCount = ({minStock, maxStock}) => {
+export default function ItemCount(props) {
 
-    const [count, setClicks] = React.useState(minStock);
+    const [count, setClicks] = useState(props.minStock);
 
-    const clickIncrease = () => {
-       return (count < maxStock)? setClicks(count + 1): false;
+    const handleIncrease = () => {
+       return (count < props.Stock)? setClicks(count + 1): false;
     }
-    const clickDecrease = () => {
-        return (count > minStock)? setClicks(count - 1): false;
+    const handleDecrease = () => {
+        return (count > props.minStock)? setClicks(count - 1): false;
     }
-    const addCart = () => {
-        toast.success('Great! You added '+ count +' unit/s', {
-            position: "top-center",
-            autoClose: 1500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            });
-    }
+   
 
     return(  
-        <div className="">
+        <div className="counterCont">
             <div className="counterSelector">
-                <h1 onClick={clickDecrease} className="btnCounterA " type="button">-</h1>
+                <h1 onClick={handleDecrease} className="btnCounterA " type="button">-</h1>
                     <h1>{count}</h1>
-                <h1 onClick={clickIncrease} className="btnCounterB" type="button">+</h1>
+                <h1 onClick={handleIncrease} className="btnCounterB" type="button">+</h1>
             </div>
-            <div className="d-grid gap-2 d-sm-flex justify-content-center" >
-                <button onClick={addCart}  className="btnAdd">Add Cart</button> 
+            <div className="counterBtn" >
+                <Button onTouch={()=> props.onAddCart(count)} className="btnAdd" text1='Add Cart'/> 
             </div>
         </div>
     );
 }
-
-export default ItemCount;
