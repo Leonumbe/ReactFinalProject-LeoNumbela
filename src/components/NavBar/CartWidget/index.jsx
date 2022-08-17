@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function CartWidget() {
     return(
         <div className="cart">
-            <Link to="/"><FontAwesomeIcon className="cartSet" icon={faShoppingCart}/></Link>
+            <Link to="/cart"><FontAwesomeIcon className="cartSet" icon={faShoppingCart}/></Link>
         </div>
     )
 }

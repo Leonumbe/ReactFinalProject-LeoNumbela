@@ -15,6 +15,7 @@ export default function ItemList({data}) {
                         category={items.category}
                         price={items.price}
                         description={items.description}
+                        stock={items.stock}
                     />
                 );
             })}

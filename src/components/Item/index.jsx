@@ -3,13 +3,14 @@ import Accordion from 'react-bootstrap/Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import Button from '../button/index';
 
 //css directo
 const iStar={
   color: "gold",
 }
 
-function Cards({ id, name, category, price, rating, image, description }) {
+function Cards({ id, name, category, price, rating, image, description, stock}) {
     return (
     <div className="my-auto mx-auto">
       <Card style={{ width: '15rem' }} className="mb-4" key={id}>
@@ -26,7 +27,10 @@ function Cards({ id, name, category, price, rating, image, description }) {
                 ))}
             </div>
             
-            <Link to={`/detail/${id}`} className="btnAdd">view more</Link>
+            <Link to={`/detail/${id}`} >
+              <Button className="btnAdd" text="view more"></Button>
+            </Link>
+
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="1" className="mt-3">
                 <Accordion.Header>Description:</Accordion.Header>

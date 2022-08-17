@@ -5,15 +5,21 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ItemCount from "../ItemCount";
 import {Link} from "react-router-dom"
+import { useState } from "react";
+import Button from '../button/index'
 
 const mg={
     marginLeft: "31px",
     width:"100"
   }
 
-export default function CardsSelected({id, name, category, price, rating, image, description, Stock}){
+export default function CardsSelected({id, name, category, price, rating, image, description, stock}){
+    
+    const cartQty = 0; 
+    const [countData, setCountData] = useState(cartQty);
 
-    function handleAdd(count){
+    function HandleAdd(count){
+        setCountData(count)
         toast.success('Great! You added '+ count +' unit/s', {
             position: "top-center",
             autoClose: 1500,
@@ -45,15 +51,29 @@ export default function CardsSelected({id, name, category, price, rating, image,
                                     ))}
                             </div>
                             <h1 className="card-title">u$s {price}.00-</h1>
+                            <p className="card-text"><small className="text-muted">Stock available: {stock}</small></p>
+                        
                             <p className="card-text">{description}</p>
-                            <ItemCount minStock={1} Stock={5} onAddCart={handleAdd}/>
-                            <p className="card-text"><small className="text-muted">End your purchase</small></p>
+
+                            {   (countData === 0)?
+                                <ItemCount 
+                                minStock={1} 
+                                Stock={stock} 
+                                onAddCart={HandleAdd}
+                                />:
+                                <Link to="/cart">
+                                    <Button text={'Go Cart'}></Button>
+                                </Link>
+                            }
+                            <p className="card-text"><small className="text-muted">{`You selected: `+ countData+` unit/s`}</small></p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="contBtnBack">
-                <Link to='/' className="btnBack">Back</Link>
+            <div >
+                <Link to='/' className="contBtnBack" >
+                    <Button className="btnBack" text="Back"></Button>
+                </Link>
             </div>
         </div>
         </>

@@ -29,7 +29,7 @@ export default function ItemDetailContainer(){
                         category={data.category}
                         price={data.price}
                         description={data.description}
-                        Stock={data.Stock}
+                        stock={data.stock}
                         />
                 </div>
             </div>

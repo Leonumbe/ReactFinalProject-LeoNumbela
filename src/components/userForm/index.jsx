@@ -3,8 +3,14 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-
 import { useState } from "react";
+
+
+const form={
+    padding: "2rem",
+}
+
+
 
 export default function UserForm(){
 
@@ -38,9 +44,9 @@ export default function UserForm(){
     return(
     <>
      <section className="title" id="Home">
-        <div className="max-width ">
-
-            <Form onSubmit={handleSubmit} onReset={handleReset}>
+            <h1 className="title">Contact Us</h1>
+        
+            <Form onSubmit={handleSubmit} onReset={handleReset} style={form}>
                 <Form.Group >
                     <Form.Label>Name</Form.Label>
                     <Form.Control onChange={handleOnChange} name="Name" value={userData.id} type="text" placeholder="Warren" />
@@ -101,7 +107,6 @@ export default function UserForm(){
                 </Button>
             </Form>
 
-        </div>
     </section>
     </>
     );

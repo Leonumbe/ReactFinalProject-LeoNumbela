@@ -4,6 +4,7 @@ import ItemList from "../ItemList/index.jsx";
 import getProducts from "../../Helpers/getProducts";
 import { useParams } from "react-router-dom";
 import itemsData from "../../api-data";
+import UserForm from "../userForm";
 
 
 
@@ -32,6 +33,7 @@ export default function ItemListContainer(props){
                 <div className= " d-flex flex-row flex-wrap">
                     <ItemList data={data}/>
                 </div>
+                <UserForm/>
             </div>
         </section>
     )

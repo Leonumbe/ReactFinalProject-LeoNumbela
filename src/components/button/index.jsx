@@ -1,13 +1,11 @@
 import "./main.css";
 
-export default function Button({onTouch, text1}){
+export default function Button({onTouch, text}){
 
     return(
-        <div>
-            <button onClick={onTouch} className="btnAdd">
-                {text1}
+            <button onClick={onTouch} className="btnAdd btnBack">
+                {text}
             </button> 
-        </div>
     )
 }
 
