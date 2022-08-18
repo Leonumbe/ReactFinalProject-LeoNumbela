@@ -5,8 +5,10 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ItemCount from "../ItemCount";
 import {Link} from "react-router-dom"
-import { useState } from "react";
-import Button from '../button/index'
+import Button from '../Button/index'
+//Nos conectamos al contex
+import { useState, useContext } from "react";
+import { cartContext } from "../../context/cartContext";
 
 const mg={
     marginLeft: "31px",
@@ -14,6 +16,10 @@ const mg={
   }
 
 export default function CardsSelected({id, name, category, price, rating, image, description, stock}){
+      
+    const {AddToCart} = useContext(cartContext)
+    const {Clear} = useContext(cartContext)
+    const {RemoveItem} = useContext(cartContext)
     
     const cartQty = 0; 
     const [countData, setCountData] = useState(cartQty);
@@ -29,6 +35,11 @@ export default function CardsSelected({id, name, category, price, rating, image,
             draggable: true,
             progress: undefined,
             });
+        //rearmamos el objeto llamamos a la funtion del context
+        const itemToCart ={id, name, category, price, rating, image, description, stock}    
+        AddToCart(itemToCart, count);
+        Clear();
+        RemoveItem(id)
     }
 
     return (

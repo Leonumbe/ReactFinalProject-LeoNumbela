@@ -1,10 +1,10 @@
 import "./main.css";
 import React, { useEffect, useState } from "react";
 import ItemList from "../ItemList/index.jsx";
-import getProducts from "../../Helpers/getProducts";
+import getProducts from "../../helpers/getProducts";
 import { useParams } from "react-router-dom";
 import itemsData from "../../api-data";
-import UserForm from "../userForm";
+import UserForm from "../UserForm";
 
 
 

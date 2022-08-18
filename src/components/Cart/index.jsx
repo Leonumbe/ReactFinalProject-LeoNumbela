@@ -1,5 +1,5 @@
 import React from "react";
-import UserForm from "../userForm";
+import UserForm from "../UserForm";
 
 
 export default function Cart(){
