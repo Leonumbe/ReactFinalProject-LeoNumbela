@@ -20,6 +20,7 @@ export default function CardsSelected({id, name, category, price, rating, image,
     const {AddToCart} = useContext(cartContext)
     const {Clear} = useContext(cartContext)
     const {RemoveItem} = useContext(cartContext)
+    const {IsInCard} = useContext(cartContext)
     
     const cartQty = 0; 
     const [countData, setCountData] = useState(cartQty);
@@ -39,7 +40,9 @@ export default function CardsSelected({id, name, category, price, rating, image,
         const itemToCart ={id, name, category, price, rating, image, description, stock}    
         AddToCart(itemToCart, count);
         Clear();
-        RemoveItem(id)
+        RemoveItem(itemToCart.id)
+        IsInCard(itemToCart.id)
+
     }
 
     return (
