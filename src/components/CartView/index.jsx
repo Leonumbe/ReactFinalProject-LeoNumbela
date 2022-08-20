@@ -5,6 +5,7 @@ import UserForm from "../UserForm";
 import Table from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons' ;
+import { Link } from "react-router-dom";
 
 
 export default function CartView(){
@@ -19,11 +20,12 @@ export default function CartView(){
             <Table striped="columns">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>Nro</th>
                         <th>Image</th>
                         <th>Name</th>
                         <th>price</th>
                         <th>Quantity</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 { cart.map((items)=>{
@@ -35,16 +37,16 @@ export default function CartView(){
                             stock={items.stock} */}
                           <tbody key={items.id}>
                             <tr>
-                              <td>{items.id}</td>
+                              <td>{cart.indexOf(items)+1}</td>
                               <td>
                                 <img src={items.image} className="img-fluid mx-auto d-block width-100px" alt="Sneaker"/>
                               </td>
                               <td>{items.name}</td>
-                              <td>{items.price}</td>
+                              <td>u$s{items.price}.-</td>
                               <td>{items.quantity}</td>
-                              <td><a href="#" className="text-dark" onClick={()=>{RemoveItem()}}>
+                              <td><Link to={"#"} className="text-dark" onClick={()=>{RemoveItem(items.Id)}}>
                               <FontAwesomeIcon className="i" icon={faTrash} />
-                              </a></td>
+                              </Link></td>
                             </tr>
                             
                             <tr>

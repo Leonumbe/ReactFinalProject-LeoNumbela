@@ -18,8 +18,6 @@ const mg={
 export default function CardsSelected({id, name, category, price, rating, image, description, stock}){
       
     const {AddToCart} = useContext(cartContext)
-    const {Clear} = useContext(cartContext)
-    const {RemoveItem} = useContext(cartContext)
     const {IsInCard} = useContext(cartContext)
     
     const cartQty = 0; 
@@ -39,8 +37,6 @@ export default function CardsSelected({id, name, category, price, rating, image,
         //rearmamos el objeto llamamos a la funtion del context
         const itemToCart ={id, name, category, price, rating, image, description, stock}    
         AddToCart(itemToCart, count);
-        Clear();
-        RemoveItem(itemToCart.id)
         IsInCard(itemToCart.id)
 
     }
