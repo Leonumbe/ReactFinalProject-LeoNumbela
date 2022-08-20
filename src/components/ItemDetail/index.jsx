@@ -17,8 +17,7 @@ const mg={
 
 export default function CardsSelected({id, name, category, price, rating, image, description, stock}){
       
-    const {AddToCart} = useContext(cartContext)
-    const {IsInCard} = useContext(cartContext)
+    const {AddToCart, IsInCard} = useContext(cartContext)
     
     const cartQty = 0; 
     const [countData, setCountData] = useState(cartQty);

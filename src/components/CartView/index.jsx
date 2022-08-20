@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 
 export default function CartView(){
-    const {cart, RemoveItem, Clear} = useContext(cartContext)
+    const {cart, RemoveItem, Clear, TotalPrice} = useContext(cartContext)
     // console.log(cart)
  
     
@@ -50,12 +50,13 @@ export default function CartView(){
                             </tr>
                             
                             <tr>
-                            <td>
-                            </td>
-                              <td></td>
-                              <td></td>
+                          
+                             <td>
+
+                             </td>
                             </tr>
                           </tbody>
+                             
                           </>
                       );
                     }
@@ -63,9 +64,34 @@ export default function CartView(){
                 )
             }
             </Table>
+
+
+            <ul class="list-unstyled mb-4">
+                <tr>
+                    <td>
+                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Order Subtotal </strong><strong>${TotalPrice()}</strong></li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Shipping and handling</strong><strong> Free</strong></li>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Total</strong>
+                        <h3 class="fw-bold">${TotalPrice()}</h3>
+                        </li>
+                    </td>
+                </tr>
+             </ul>
+
+
             <a href="#" className="text-dark" onClick={()=>{Clear()}}>
                             <FontAwesomeIcon className="i" icon={faTrash} />
-                                </a>
+            </a>
+            
+            <button className={"btnBack"}>Procceed to checkout</button>
      
         </div>
     </section>
