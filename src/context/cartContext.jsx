@@ -4,7 +4,7 @@ import React, { createContext, useState} from "react";
 export const cartContext = createContext();
 
 export function CartContextProvider({children}){
-    const [cart, setCart]= useState([0])
+    const [cart, setCart]= useState([])
 
     let copyCart = [...cart];
     
@@ -15,6 +15,8 @@ export function CartContextProvider({children}){
         if (IsInCard(item.id)) {
         let filterCard = copyCart.filter((item)=>item.id !== isinCart.id)
         copyCart = [...filterCard,{...isinCart, quantity: isinCart.quantity + quantity}]
+        Badge()
+        console.log(Badge())
         setCart(copyCart)
         console.log(copyCart)
     }else{
