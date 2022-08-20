@@ -16,7 +16,7 @@ export function CartContextProvider({children}){
         let filterCard = copyCart.filter((item)=>item.id !== isinCart.id)
         copyCart = [...filterCard,{...isinCart, quantity: isinCart.quantity + 1}]
         setCart(copyCart)
-        console.log(copyCart)
+       // console.log(copyCart)
         }else{
         //copiamos los elementos del cart
         //copyCart = [...cart];
@@ -25,7 +25,7 @@ export function CartContextProvider({children}){
         //Ahora tenemos todo los datos en un solo []
         setCart(copyCart)
     }
-    console.log(cart)
+    //console.log(cart)
     }
     function IsInCard(id){
         //console.log(id)
@@ -33,20 +33,19 @@ export function CartContextProvider({children}){
     }
     function RemoveItem(itemId){
         //console.log(itemId)
-        // const item = (copyCartRemove.find((element)=>element.id === itemId));
-        // const indiceArray = (copyCartRemove.indexOf(item));
-        // copyCartRemove.splice(indiceArray,1)
-        // setCart(copyCartRemove)
-        ///otra opcion mas simple
-        const removeItem = copyCart.filter((element)=>element.id !== itemId)
-        removeItem.push(copyCart)
+        const item = (copyCart.find((element)=>element.id === itemId));
+        const indiceArray = (copyCart.indexOf(item));
+        copyCart.splice(indiceArray,1)
         setCart(copyCart)
-        console.log(cart)
+        ///otra opcion mas simple
+    //     const removeItem = copyCart.filter((element)=>element.id !== itemId)
+    //     setCart(removeItem)
+    //    // console.log(cart)
     }
 
     function Clear(){
         setCart([])
-        console.log(cart)
+       // console.log(cart)
     }
 
     function Badge(){

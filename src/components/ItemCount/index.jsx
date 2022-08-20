@@ -22,7 +22,7 @@ export default function ItemCount(props) {
                 <h1 onClick={handleIncrease} className="btnCounterB" type="button">+</h1>
             </div>
             <div className="counterBtn" >
-                <Button onTouch={()=> props.onAddCart(count)} className="btnAdd" text={'Add Cart'} /> 
+                <Button onTouch={()=> props.onAddCart(count)} className={"btnAdd"} text={'Add Cart'} /> 
             </div>
         </div>
     );

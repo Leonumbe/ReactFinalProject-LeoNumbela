@@ -10,7 +10,7 @@ import ItemListContainer from './components/ItemListContainer/index';
 import ItemDetailContainer from './components/ItemDetailContainer/index';
 import Footer from './components/Footer/index'
 import UserForm from './components/UserForm';
-import Cart from './components/Cart';
+import CartView from './components/CartView';
 //toastify
 import {ToastContainer} from 'react-toastify';
 
@@ -34,7 +34,7 @@ function App() {
             <Route path='/category/:category' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
             <Route path="/detail/:id" element={<ItemDetailContainer greeting = {headTitle.subtitle1} itemId = {3}/>}></Route>
             <Route path='/contacUs' element={<UserForm/>}></Route>
-            <Route path='/cart' element={<Cart/>}></Route>
+            <Route path='/cart' element={<CartView/>}></Route>
             <Route path='*' element={<h1 className='error'>{Error.title}</h1>}></Route>
           </Routes>
           <Footer/>

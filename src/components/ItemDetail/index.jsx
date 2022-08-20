@@ -76,7 +76,7 @@ export default function CardsSelected({id, name, category, price, rating, image,
                                 onAddCart={HandleAdd}
                                 />:
                                 <Link to="/cart">
-                                    <Button text={'Go Cart'}></Button>
+                                    <Button text={'Go Cart'} className={"btnAdd"}></Button>
                                 </Link>
                             }
                             <p className="card-text"><small className="text-muted">{`You selected: `+ countData+` unit/s`}</small></p>
@@ -85,8 +85,8 @@ export default function CardsSelected({id, name, category, price, rating, image,
                 </div>
             </div>
             <div >
-                <Link to='/' className="contBtnBack" >
-                    <Button className="btnBack" text="Back"></Button>
+                <Link to='/' >
+                    <Button className={"btnBack"} text="Back"></Button>
                 </Link>
             </div>
         </div>
