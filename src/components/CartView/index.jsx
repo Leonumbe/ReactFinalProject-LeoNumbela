@@ -69,12 +69,12 @@ export default function CartView(){
             <ul class="list-unstyled mb-4">
                 <tr>
                     <td>
-                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Order Subtotal </strong><strong>${TotalPrice()}</strong></li>
+                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Order Subtotal </strong><strong>:  $ {TotalPrice()}</strong></li>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Shipping and handling</strong><strong> Free</strong></li>
+                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Ship&hand</strong><strong> Free</strong></li>
                     </td>
                 </tr>
                 <tr>
