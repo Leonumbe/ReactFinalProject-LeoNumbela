@@ -30,10 +30,19 @@ export default function ItemListContainer(props){
         <section className="title" id="Home">
             <div className="max-width ">
                 <h1 className="title">{props.greeting}</h1>
+                {(data.length > 0)?
+                <>
                 <div className= " d-flex flex-row flex-wrap">
-                    <ItemList data={data}/>
+                <ItemList data={data}/>
                 </div>
                 <UserForm/>
+                </>
+                :
+
+<></>
+
+
+            }
             </div>
         </section>
     )
