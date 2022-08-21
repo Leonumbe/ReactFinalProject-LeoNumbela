@@ -17,11 +17,11 @@ const mg={
 
 export default function CardsSelected({id, name, category, price, rating, image, description, stock}){
       
-    const {AddToCart, IsInCard} = useContext(cartContext)
     
     const cartQty = 0; 
     const [countData, setCountData] = useState(cartQty);
-
+    const {AddToCart, IsInCard} = useContext(cartContext)
+    
     function HandleAdd(count){
         setCountData(count)
         toast.success('Great! You added '+ count +' unit/s', {
@@ -33,6 +33,7 @@ export default function CardsSelected({id, name, category, price, rating, image,
             draggable: true,
             progress: undefined,
             });
+
         //rearmamos el objeto llamamos a la funtion del context
         const itemToCart ={id, name, category, price, rating, image, description, stock}    
         AddToCart(itemToCart, count);
@@ -69,12 +70,15 @@ export default function CardsSelected({id, name, category, price, rating, image,
                                 minStock={1} 
                                 Stock={stock} 
                                 onAddCart={HandleAdd}
-                                />:
+                                />:(
+                                <div>
                                 <Link to="/cart">
                                     <Button text={'Go Cart'} className={"btnAdd"}></Button>
                                 </Link>
+                                <p className="card-text"><small className="text-muted">{`You selected: `+ countData+` unit/s`}</small></p>
+                                </div>
+                                )
                             }
-                            <p className="card-text"><small className="text-muted">{`You selected: `+ countData+` unit/s`}</small></p>
                         </div>
                     </div>
                 </div>

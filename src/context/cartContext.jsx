@@ -12,13 +12,12 @@ export function CartContextProvider({children}){
         //confirmamos que recibimos los elementos
         //console.log(item, quantity)
         if (IsInCard(item.id)) {
-        let isinCart = copyCart.find((item)=>item.id == item.id)    
-        let filterCard = copyCart.filter((item)=>item.id !== isinCart.id)
+            let isinCart = copyCart.find((item)=>item.id == item.id)    
+            let filterCard = copyCart.filter((item)=>item.id !== isinCart.id)
         copyCart = [...filterCard,{...isinCart, quantity: isinCart.quantity + quantity}]
-
-
-        console.log(Badge())
         setCart(copyCart)
+
+        Badge()
         console.log(copyCart)
     }else{
         //copiamos los elementos del cart
@@ -51,7 +50,7 @@ export function CartContextProvider({children}){
     }
 
     function Badge(){
-        return copyCart.reduce((acum, prod)=> acum += prod.quantity, 0)
+        return cart.reduce((acum, prod)=> acum += prod.quantity, 0)
     }
     
     function TotalPrice(){
