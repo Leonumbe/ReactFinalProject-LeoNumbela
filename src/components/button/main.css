@@ -1,7 +1,6 @@
 
 .btnBack{
     background: linear-gradient(to right, rgb(214, 218, 15), rgb(240, 88, 0));
-    display: inline-block;
     color: rgb(243, 243, 243);
     font-size: 20px;
     font-weight: 700;

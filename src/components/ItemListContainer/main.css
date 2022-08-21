@@ -9,3 +9,9 @@
     font-size: 25px;
     padding: 20px 0px;
 }
+.loaderStile{
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

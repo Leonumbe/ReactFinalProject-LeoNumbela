@@ -1,21 +1,37 @@
 //Damos acceso a context
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { cartContext } from "../../context/cartContext";
 import UserForm from "../UserForm";
 import Table from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons' ;
 import { Link } from "react-router-dom";
+import Button from "../Button";
+import  "./cartView.css"
 
 
 export default function CartView(){
     const {cart, RemoveItem, Clear, TotalPrice} = useContext(cartContext)
-    // console.log(cart)
- 
-    
+console.log(cart)
     return(
         <section className="title">
         <div className="max-width ">
+        {
+            (cart.length == 0)
+            ?
+            <>
+            <div className="emptyCartContent">
+            <img src="https://i.ibb.co/fqDvSdf/Empty-Cart.png" alt="Empty-Cart" border="0" />
+                <h1 className="title">Your Cart is Empty!!!!</h1>
+                <h3 className="textAdapt">Look like you have not added anything to your Cart</h3>
+                <h3 className="textAdapt">Go ahead & explore our Categories</h3>
+                <Link to="/"  >
+                    <Button className={"btnBack"} text={"Back to Home"}></Button>
+                </Link>
+                </div>
+            </>
+            :
+            <>
             <h1 className="title">End your Purchase</h1>
             <Table striped="columns">
                 <thead>
@@ -45,54 +61,34 @@ export default function CartView(){
                               <td>u$s{items.price}.-</td>
                               <td>{items.quantity}</td>
                               <td><Link to={"#"} className="text-dark" onClick={()=>{RemoveItem(items.Id)}}>
-                              <FontAwesomeIcon className="i" icon={faTrash} />
+                                <FontAwesomeIcon className="i" icon={faTrash} />
                               </Link></td>
                             </tr>
-                            
-                            <tr>
-                          
-                             <td>
-
-                             </td>
-                            </tr>
                           </tbody>
-                             
                           </>
-                      );
-                    }
-                   
-                )
-            }
+                        );
+                    })
+                }
             </Table>
 
 
-            <ul class="list-unstyled mb-4">
-                <tr>
-                    <td>
-                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Order Subtotal </strong><strong>:  $ {TotalPrice()}</strong></li>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Ship&hand</strong><strong> Free</strong></li>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <li class="d-flex justify-content-between py-1 border-bottom"><strong className="text-muted">Total</strong>
-                        <h3 class="fw-bold">${TotalPrice()}</h3>
+            <ul className="list-unstyled mb-1">
+                        <li className="d-flex justify-content-start py-3 border-bottom"><strong className="text-muted">Order Subtotal </strong><strong>:  $ {TotalPrice()}</strong></li>
+                        <li className="d-flex justify-content-start py-3 border-bottom"><strong className="text-muted">Ship&Hand</strong><strong>: Free</strong></li>
+                        <li className="d-flex justify-content-start py-3 border-bottom"><strong className="text-muted">Total </strong>
+                            <h3 className="fw-bold">: ${TotalPrice()}</h3>
                         </li>
-                    </td>
-                </tr>
-             </ul>
+            </ul>
 
 
-            <a href="#" className="text-dark" onClick={()=>{Clear()}}>
-                            <FontAwesomeIcon className="i" icon={faTrash} />
-            </a>
+            <Link to="/cart" className="text-dark" onClick={()=>{Clear()}}>
+                <FontAwesomeIcon className="i" icon={faTrash} />
+            </Link>
             
-            <button className={"btnBack"}>Procceed to checkout</button>
-     
+            <Button className={"btnBack"} text={"Procceed to checkout"}></Button>
+            </>
+
+            }
         </div>
     </section>
     )

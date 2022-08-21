@@ -1,0 +1,13 @@
+
+
+.emptyCartContent{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.textAdapt{
+font-family: system-ui;
+font-weight: 500;
+font-size: 1.5rem;
+}
