@@ -3,7 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Button from '../Button/index';
+import Button from '../button/button.jsx';
 
 //css directo
 const iStar={

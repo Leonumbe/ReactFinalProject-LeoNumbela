@@ -1,6 +1,6 @@
 import "./main.css"
 import React, { useState } from "react";
-import Button from "../Button/index";
+import Button from "../button/button.jsx";
 
 export default function ItemCount(props) {
 

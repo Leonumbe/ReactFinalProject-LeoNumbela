@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import CardsSelected from "../ItemDetail"
-import getProducts from "../../helpers/getProducts";
+import CardsSelected from "../itemDetail/itemDetal"
+import getProducts from "../../helpers/getProducts.jsx";
 import { useParams } from "react-router-dom";
 
 

@@ -3,9 +3,9 @@ import {faStar} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ItemCount from "../ItemCount";
+import ItemCount from "../ItemCount/itemCount";
 import {Link} from "react-router-dom"
-import Button from '../Button/index'
+import Button from '../button/button.jsx'
 //Nos conectamos al contex
 import { useState, useContext } from "react";
 import { cartContext } from "../../context/cartContext";

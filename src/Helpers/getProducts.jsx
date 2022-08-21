@@ -1,4 +1,4 @@
-import itemsData from "../api-data/index.jsx";
+import itemsData from "../apiData/apiData.jsx";
 
 
 export default function getProducts(idUrl) {

@@ -1,5 +1,5 @@
 import "./main.css";
-import CartWidget from "./CartWidget/index";
+import CartWidget from "./cartWidget/cartWidget.jsx";
 import { Link } from "react-router-dom";
 
 import Button from 'react-bootstrap/Button';

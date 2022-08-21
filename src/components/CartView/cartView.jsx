@@ -1,13 +1,13 @@
 //Damos acceso a context
 import React, {useContext, useState} from "react";
 import { cartContext } from "../../context/cartContext";
-import UserForm from "../UserForm";
+import userForm from "../userForm/userForm.jsx";
 import Table from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons' ;
 import { Link } from "react-router-dom";
-import Button from "../Button";
-import  "./main.css"
+import Button from "../button/button";
+import  "./main.css";
 
 
 export default function CartView(){

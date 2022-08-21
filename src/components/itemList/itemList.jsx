@@ -1,4 +1,4 @@
-import Cards from "../Item/index.jsx"
+import Cards from "../item/item.jsx"
 
 
 export default function ItemList({data}) {
