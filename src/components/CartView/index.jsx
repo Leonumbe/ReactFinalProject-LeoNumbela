@@ -7,12 +7,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons' ;
 import { Link } from "react-router-dom";
 import Button from "../Button";
-import  "./cartView.css"
+import  "./main.css"
 
 
 export default function CartView(){
     const {cart, RemoveItem, Clear, TotalPrice} = useContext(cartContext)
-console.log(cart)
     return(
         <section className="title">
         <div className="max-width ">

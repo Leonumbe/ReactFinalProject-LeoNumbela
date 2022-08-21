@@ -13,7 +13,7 @@ function CartWidget() {
     return(
         <div className="cart">
             <Link to="/cart"><FontAwesomeIcon className="cartSet" icon={faShoppingCart}/></Link>
-        {(cart == 0)? false : <span>{Badge()}</span>}
+        {(cart.length == 0)? false : <span>{Badge()}</span>}
         </div>
     )
 }
