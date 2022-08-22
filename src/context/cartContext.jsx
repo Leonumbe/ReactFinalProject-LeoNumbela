@@ -8,26 +8,21 @@ export function CartContextProvider({children}){
 
     let copyCart = [...cart];
     
-    function AddToCart(item, quantity){
+    function AddToCart(item){
         //confirmamos que recibimos los elementos
-        //console.log(item, quantity)
+        //console.log(item)
         if (IsInCard(item.id)) {
-            let isinCart = copyCart.find((item)=>item.id == item.id)    
-            let filterCard = copyCart.filter((item)=>item.id !== isinCart.id)
-        copyCart = [...filterCard,{...isinCart, quantity: isinCart.quantity + quantity}]
-        setCart(copyCart)
-
+        const itemRepeated = copyCart.find((element) => element.id === item.id )
+        const {count} = itemRepeated
+        itemRepeated.count = item.count + count;
+        const newCartArray = [...cart]
+        setCart(newCartArray)
         Badge()
         console.log(copyCart)
     }else{
-        //copiamos los elementos del cart
-        //copyCart = [...cart];
-        //recordar item es un objeto
-        copyCart.push({...item, quantity});
-        //Ahora tenemos todo los datos en un solo []
-        setCart(copyCart)
+        setCart([...cart, item]) 
+        Badge(item.count)
         }
-    //console.log(cart)
     }
     function IsInCard(itemId){
         //console.log(id)
@@ -36,7 +31,7 @@ export function CartContextProvider({children}){
     function RemoveItem(itemId){
          const item = (copyCart.find((element)=>element.id === itemId));
          const indiceArray = (copyCart.indexOf(item));
-         copyCart.splice(indiceArray,1)
+         copyCart.splice(indiceArray, 1)
          setCart(copyCart)
         //  //otra opcion mas simple con filter pero no la pude hacer andar 
         //  const removeItem = copyCart.filter(element=> element.id !== itemId)
@@ -50,11 +45,11 @@ export function CartContextProvider({children}){
     }
 
     function Badge(){
-        return cart.reduce((acum, prod)=> acum += prod.quantity, 0)
+        return cart.reduce((acum, prod)=> acum += prod.count, 0)
     }
     
     function TotalPrice(){
-        return cart.reduce((acum, prod)=> acum = acum +( prod.quantity * prod.price), 0)
+        return cart.reduce((acum, prod)=> acum = acum +( prod.count * prod.price), 0)
     }
 
     

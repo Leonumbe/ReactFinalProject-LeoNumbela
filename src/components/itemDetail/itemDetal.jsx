@@ -35,8 +35,9 @@ export default function CardsSelected({id, name, category, price, rating, image,
             });
 
         //rearmamos el objeto llamamos a la funtion del context
-        const itemToCart ={id, name, category, price, rating, image, description, stock}    
-        AddToCart(itemToCart, count);
+        const itemToCart ={id, name, category, price, rating, image, description, stock, count}    
+        AddToCart(itemToCart);
+        
         IsInCard(itemToCart.id)
 
     }
