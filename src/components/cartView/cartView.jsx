@@ -11,7 +11,7 @@ import  "./main.css";
 
 
 export default function CartView(){
-    const {cart, RemoveItem, Clear, TotalPrice} = useContext(cartContext)
+    const {cart, RemoveItem, Clear, TotalPrice, Badge} = useContext(cartContext)
     return(
         <section className="title">
         <div className="max-width ">
@@ -31,7 +31,7 @@ export default function CartView(){
             </>
             :
             <>
-            <h1 className="title">End your Purchase</h1>
+            <h1 className="title">Your Cart: {Badge()} product/s</h1>
             <Table striped="columns">
                 <thead>
                     <tr>

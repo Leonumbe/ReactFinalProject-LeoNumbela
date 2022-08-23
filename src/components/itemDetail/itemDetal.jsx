@@ -20,7 +20,7 @@ export default function CardsSelected({id, name, category, price, rating, image,
     
     const cartQty = 0; 
     const [countData, setCountData] = useState(cartQty);
-    const {AddToCart, IsInCard} = useContext(cartContext)
+    const {AddToCart, IsInCard, ReduceStock} = useContext(cartContext)
     
     function HandleAdd(count){
         setCountData(count)
@@ -37,8 +37,8 @@ export default function CardsSelected({id, name, category, price, rating, image,
         //rearmamos el objeto llamamos a la funtion del context
         const itemToCart ={id, name, category, price, rating, image, description, stock, count}    
         AddToCart(itemToCart);
-        
         IsInCard(itemToCart.id)
+        ReduceStock(itemToCart)
 
     }
 

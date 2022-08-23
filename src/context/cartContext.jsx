@@ -1,4 +1,5 @@
 import React, { createContext, useState} from "react";
+import { Card } from "react-bootstrap";
 
 
 export const cartContext = createContext();
@@ -19,9 +20,9 @@ export function CartContextProvider({children}){
         setCart(newCartArray)
         Badge()
         console.log(copyCart)
-    }else{
-        setCart([...cart, item]) 
-        Badge(item.count)
+        }else{
+            setCart([...cart, item]) 
+            Badge(item.count)
         }
     }
     function IsInCard(itemId){
@@ -29,10 +30,10 @@ export function CartContextProvider({children}){
         return (cart.some((element => element.id === itemId)))
     }
     function RemoveItem(itemId){
-         const item = (copyCart.find((element)=>element.id === itemId));
-         const indiceArray = (copyCart.indexOf(item));
-         copyCart.splice(indiceArray, 1)
-         setCart(copyCart)
+        const item = (copyCart.find((element)=>element.id === itemId));
+        const indiceArray = (copyCart.indexOf(item));
+        copyCart.splice(indiceArray, 1)
+        setCart(copyCart)
         //  //otra opcion mas simple con filter pero no la pude hacer andar 
         //  const removeItem = copyCart.filter(element=> element.id !== itemId)
         //  setCart(removeItem)
@@ -47,14 +48,20 @@ export function CartContextProvider({children}){
     function Badge(){
         return cart.reduce((acum, prod)=> acum += prod.count, 0)
     }
-    
+
     function TotalPrice(){
         return cart.reduce((acum, prod)=> acum = acum +( prod.count * prod.price), 0)
     }
 
+    function ReduceStock(item){
+        //console.log(item.stock)
+        (item.stock > 0)? 
+        item.stock -= item.count 
+        : alert("supera stock disponible");
+    }
     
     return(
-        <cartContext.Provider value={{cart, AddToCart, Clear, RemoveItem, IsInCard, Badge, TotalPrice}}>
+        <cartContext.Provider value={{cart, AddToCart, Clear, RemoveItem, IsInCard, Badge, TotalPrice, ReduceStock}}>
             {children}
         </cartContext.Provider>
     )
