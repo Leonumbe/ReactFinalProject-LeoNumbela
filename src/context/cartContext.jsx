@@ -30,14 +30,15 @@ export function CartContextProvider({children}){
         return (cart.some((element => element.id === itemId)))
     }
     function RemoveItem(itemId){
-        const item = (copyCart.find((element)=>element.id === itemId));
-        const indiceArray = (copyCart.indexOf(item));
-        copyCart.splice(indiceArray, 1)
-        setCart(copyCart)
-        //  //otra opcion mas simple con filter pero no la pude hacer andar 
-        //  const removeItem = copyCart.filter(element=> element.id !== itemId)
-        //  setCart(removeItem)
-        //  console.log(cart)
+        //console.log(itemId)
+        // const item = (copyCart.find((element)=>element.id === itemId));
+        // const indiceArray = (copyCart.indexOf(item));
+        // copyCart.splice(indiceArray, 1)
+        // setCart(copyCart)
+         //otra opcion mas simple
+         const removeItem = cart.filter(element=> element.id !== itemId)
+         setCart(removeItem)
+         console.log(cart)
     }
 
     function Clear(){

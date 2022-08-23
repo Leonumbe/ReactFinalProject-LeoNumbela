@@ -59,9 +59,10 @@ export default function CartView(){
                               <td>{items.name}</td>
                               <td>u$s{items.price}.-</td>
                               <td>{items.count}</td>
-                              <td><Link to={"#"} className="text-dark" onClick={()=>{RemoveItem(items.Id)}}>
+                              <td><Link to={"#"} className="text-dark" onClick={()=>RemoveItem(items.id)}>
                                 <FontAwesomeIcon className="i" icon={faTrash} />
-                              </Link></td>
+                              </Link>
+                              </td>
                             </tr>
                           </tbody>
                           </>
