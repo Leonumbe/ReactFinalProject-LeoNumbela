@@ -11,3 +11,6 @@ font-family: system-ui;
 font-weight: 500;
 font-size: 1.5rem;
 }
+img.img-fluid.mx-auto.d-block.width-100px {
+    max-width: 12rem;
+}

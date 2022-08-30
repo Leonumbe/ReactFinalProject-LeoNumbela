@@ -83,6 +83,7 @@ export default function CartView(){
 
             <Link to="/cart" className="text-dark" onClick={()=>{Clear()}}>
                 <FontAwesomeIcon className="i" icon={faTrash} />
+                Empty Cart
             </Link>
             
             <Button className={"btnBack"} text={"Procceed to checkout"}></Button>
