@@ -3,22 +3,34 @@ import React, { useEffect, useState } from "react";
 import ItemList from "../itemList/itemList.jsx";
 import getProducts from "../../helpers/getProducts";
 import { useParams } from "react-router-dom";
-import itemsData from "../../apiData/apiData.jsx";
+//import itemsData from "../../apiData/apiData.jsx";
 import UserForm from "../userForm/userForm.jsx";
 import { MrMiyagi } from '@uiball/loaders'
-
+//import firebase
+import firestoreDB from "../../services/firebase";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 export default function ItemListContainer(props){
     const filterCat = useParams().category;
     const [data, setData] = useState([]);
     //console.log(useParams())    
     //console.log(filterCat)  
-    
+
     useEffect(() => {
+        
         getProducts().then((respuesta) => {
             if(filterCat){
-            let categoryFilter = itemsData.filter(element => element.category === filterCat)
-            setTimeout( () => setData(categoryFilter), 500)
+                const apiDataCollection = collection(firestoreDB, "apiData");
+                const q = query(apiDataCollection, where("category","==", filterCat))
+                getDocs(q).then( snapshot=>{
+                const docData = snapshot.docs.map(doc => {
+                    return{
+                        ...doc.data(), id: doc.id 
+                    }
+                })
+                setTimeout( () => setData(docData), 500)
+                })
+
             }else{
             setData(respuesta)
             }

@@ -38,7 +38,7 @@ export default function CardsSelected({id, name, category, price, rating, image,
         const itemToCart ={id, name, category, price, rating, image, description, stock, count}    
         AddToCart(itemToCart);
         IsInCard(itemToCart.id)
-        ReduceStock(itemToCart)
+        //ReduceStock(itemToCart)
 
     }
 

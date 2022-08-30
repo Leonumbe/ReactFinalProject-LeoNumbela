@@ -13,17 +13,18 @@ export function CartContextProvider({children}){
         //confirmamos que recibimos los elementos
         //console.log(item)
         if (IsInCard(item.id)) {
-        const itemRepeated = copyCart.find((element) => element.id === item.id )
-        const {count} = itemRepeated
-        itemRepeated.count = item.count + count;
-        const newCartArray = [...cart]
-        setCart(newCartArray)
-        Badge()
-        console.log(copyCart)
+            const itemRepeated = copyCart.find((element) => element.id === item.id )
+            const {count} = itemRepeated
+            itemRepeated.count = item.count + count;
+            const newCartArray = [...cart]
+            setCart(newCartArray)
+            Badge()
+            console.log(copyCart)
         }else{
             setCart([...cart, item]) 
             Badge(item.count)
         }
+      
     }
     function IsInCard(itemId){
         //console.log(id)
@@ -54,15 +55,18 @@ export function CartContextProvider({children}){
         return cart.reduce((acum, prod)=> acum = acum +( prod.count * prod.price), 0)
     }
 
-    function ReduceStock(item){
-        //console.log(item.stock)
-        (item.stock > 0)? 
-        item.stock -= item.count 
-        : alert("supera stock disponible");
-    }
+    // function ReduceStock(item){
+    // //     if(item.stock > 0){
+    // //     (item.stock -= item.count )
+    // //     setCart([...cart, item.stock])
+    // //     }else{
+    // //         alert("supera stock disponible");
+
+    // //     }
+    // }
     
     return(
-        <cartContext.Provider value={{cart, AddToCart, Clear, RemoveItem, IsInCard, Badge, TotalPrice, ReduceStock}}>
+        <cartContext.Provider value={{cart, AddToCart, Clear, RemoveItem, IsInCard, Badge, TotalPrice}}>
             {children}
         </cartContext.Provider>
     )

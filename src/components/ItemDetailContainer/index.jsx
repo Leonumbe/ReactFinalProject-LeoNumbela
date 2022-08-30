@@ -13,7 +13,7 @@ export default function ItemDetailContainer(){
         getProducts(idUrl)
         .then((respuesta) => setData(respuesta))
         .catch((error)=> console.log(error))
-    }, [idUrl]);
+    }, []);
 
     return(
         <section className="title" id="Home">

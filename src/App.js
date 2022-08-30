@@ -13,6 +13,11 @@ import UserForm from './components/userForm/userForm.jsx';
 import CartView from './components/cartView/cartView.jsx';
 //toastify
 import {ToastContainer} from 'react-toastify';
+//firebase
+import firestoreDB from "../src/services/firebase";
+
+
+
 
 const headTitle = {
   title:"Ours Products ",
@@ -24,6 +29,7 @@ const Error = {
 };
 
 function App() {
+  //console.log(firestoreDB)
   return (
     <div className="Body">
       <BrowserRouter>
@@ -32,7 +38,7 @@ function App() {
           <Routes>
             <Route path='/' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
             <Route path='/category/:category' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
-            <Route path="/detail/:id" element={<ItemDetailContainer greeting = {headTitle.subtitle1} itemId = {3}/>}></Route>
+            <Route path="/detail/:id" element={<ItemDetailContainer greeting = {headTitle.subtitle1} />}></Route>
             <Route path='/contacUs' element={<UserForm/>}></Route>
             <Route path='/cart' element={<CartView/>}></Route>
             <Route path='*' element={<h1 className='error'>{Error.title}</h1>}></Route>
