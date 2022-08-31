@@ -10,7 +10,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function NavBar(){
     const menu = [  {url:'/', title:'Products'},
-                    {url:'/detail/9SjdkclcMgXZljnv6Nw5', title:'A Product'},
+                    {url:'/detail/d0dWbbSRfe8jreizMH3j', title:'A Product'},
                     {url:'/category/Sneakers', title:'Sneakers'},
                     {url:'/category/Boot', title:'Boots'},
                     {url:'/category/Running', title:'Running'},

@@ -7,7 +7,7 @@ export default function getProducts(idUrl) {
     return new Promise((resolve, reject)=>{
         //llamo un solo producto
         if(idUrl){
-            const apiDataCollection = collection(firestoreDB, "apiData");
+            const apiDataCollection = collection(firestoreDB, "apiDataFull");
             const docRef = doc(apiDataCollection, idUrl);
             getDoc(docRef).then( snapshot => {
                 setTimeout( () => resolve(
@@ -16,7 +16,7 @@ export default function getProducts(idUrl) {
             })
         }else if([]){
             //llamo a todos los porductos
-            const apiDataCollection = collection(firestoreDB, "apiData");
+            const apiDataCollection = collection(firestoreDB, "apiDataFull");
             getDocs(apiDataCollection).then( snapshot=>{
             const docData = snapshot.docs.map(doc => {
                 return{

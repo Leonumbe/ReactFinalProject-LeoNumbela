@@ -15,8 +15,8 @@ import CartView from './components/cartView/cartView.jsx';
 import {ToastContainer} from 'react-toastify';
 //firebase
 import firestoreDB from "../src/services/firebase";
-
-
+//push de apiData a firebase
+//import { saveProductsToFirebase } from '../src/services/firebase';
 
 
 const headTitle = {

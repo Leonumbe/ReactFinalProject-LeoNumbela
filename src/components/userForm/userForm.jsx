@@ -22,8 +22,7 @@ export default function UserForm(){
          event.preventDefault();
          console.log(userData);
          setUserData({name:"", Surname:"", Email:"", Address:"",
-         City:"", State:"", ZipCode:"", Topic:"", Text:""
-});
+         City:"", State:"", ZipCode:"", Topic:"", Text:""});
     }
     function handleReset(e){
         e.preventDefault();

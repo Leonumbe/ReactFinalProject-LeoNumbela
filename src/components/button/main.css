@@ -4,14 +4,14 @@
     color: rgb(243, 243, 243);
     font-size: 20px;
     font-weight: 700;
-    padding: 10px 50px ;
+    margin: 2rem;
+    padding: 10px 15px ;
     border:whitesmoke ;
     border-radius: 7.5px ;
     box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);
     transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
-    margin: 2rem;
     display: inline-block;
     flex-flow: row nowrap;
     justify-content: center;
@@ -23,7 +23,24 @@
     color: #fff;
     font-size: 15px;
     font-weight: 700;
-    padding: 11px 51px ;
+    margin: 10px;
+    padding: 12px 40px ;
+    border:whitesmoke ;
+    border-radius: 7.5px ;
+    box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btnAddB{
+    background: linear-gradient(to right, rgb(106, 6, 236), rgb(220, 0, 240));
+    display: inline-block;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 2rem;
+    padding: 11px 30px ;
     border:whitesmoke ;
     border-radius: 7.5px ;
     box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);

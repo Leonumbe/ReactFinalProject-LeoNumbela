@@ -20,7 +20,7 @@ export default function ItemListContainer(props){
         
         getProducts().then((respuesta) => {
             if(filterCat){
-                const apiDataCollection = collection(firestoreDB, "apiData");
+                const apiDataCollection = collection(firestoreDB, "apiDataFull");
                 const q = query(apiDataCollection, where("category","==", filterCat))
                 getDocs(q).then( snapshot=>{
                 const docData = snapshot.docs.map(doc => {
