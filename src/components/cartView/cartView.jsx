@@ -118,7 +118,7 @@ export default function CartView(){
                 <Form.Label>Example textarea</Form.Label>
                 <Form.Control as="textarea" rows={3} />
                 </Form.Group> */}
-            <CheckOutForm/>
+            <CheckOutForm />
             </Modal.Body>
             <Modal.Footer>
             <button variant="secondary" onClick={handleClose} className={"btnBack"}>
