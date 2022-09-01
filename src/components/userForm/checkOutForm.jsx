@@ -7,7 +7,12 @@ import { useState, useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 //Import to firebase
 import firestoreDB from "../../services/firebase";
-import { addDoc, collection, } from "firebase/firestore";
+import {addDoc, collection, } from "firebase/firestore";
+import { Link } from "react-router-dom";
+
+import swal from 'sweetalert';
+import { faRefresh } from "@fortawesome/free-solid-svg-icons";
+
 
 
 //styles
@@ -24,7 +29,10 @@ export default function CheckOutForm(){
 
     const {cart, Clear,  TotalPrice} = useContext(cartContext)
 
-    const [purchaseSucess, setPurchaseSucess] = useState(false)
+    const [purchaseSucess, setPurchaseSucess] = useState({
+        id:"", 
+        status:"false",
+    })
 
     const purchaseTicket = {
         buyer: {...userData},
@@ -40,9 +48,10 @@ export default function CheckOutForm(){
 
     const collectionRef = collection(firestoreDB, "purchaseOrders") ;
     const docRef = await  addDoc(collectionRef, purchaseTicket);
-    setPurchaseSucess(docRef.id)
+    setPurchaseSucess({id: docRef.id, status: true})
     console.log(purchaseSucess)
-}
+    //Clear()
+    }
 
     function handleReset(e){
         e.preventDefault();
@@ -60,18 +69,28 @@ export default function CheckOutForm(){
         copyUserData[inputName] = value;
         setUserData(copyUserData);
     }
-    if(purchaseSucess){
+    if(purchaseSucess.status === true){
         return(
-            <>
-            <h1 className="display-3">Thank You!</h1> 
-            <p>Your purchase was successfully processed</p>
-            <p>Your code: {purchaseSucess}</p>
-            <p className="lead"><strong>Please check your email</strong> for further instructions on how to complete your shopping</p>
+           
+            swal({
+                title: "Thanks You!!",
+                text: `Your code is: ${purchaseSucess.id} `,
+                icon: "success",
+                button:`confirm`,
+                
+            }),
+            Clear()
             
-            <button onClick={()=>{Clear()}} className={"btnAdd"} >
-            Confirn
-            </button>
-            </>
+            // Body del modal creado              
+            // <div>
+            //     <h1 className="display-3">Thanks You{userData.Name}!</h1> 
+            //     <p>Your purchase was successfully processed</p>
+            //     <p>Your code is: {purchaseSucess.id}</p>
+            //     <p className="lead"><strong>Please check your email {userData.Email}</strong> for further instructions on how to complete your shopping</p>
+            //     <button onClick={()=>{Clear()}} className={"btnAdd"} >
+            //     Confirm
+            //     </button>
+            // </div>
         )
     }
     return(
@@ -79,7 +98,7 @@ export default function CheckOutForm(){
             <Form onSubmit={handleSubmit} onReset={handleReset}>
                 <Form.Group >
                     <Form.Label>Name</Form.Label>
-                    <Form.Control onChange={handleOnChange} name="Name" value={userData.id} type="text" placeholder="Warren" />
+                    <Form.Control onChange={handleOnChange} name="Name" value={userData.Name} type="text" placeholder="Warren" />
                 </Form.Group>
                 <Form.Group className="mb-3" >
                     <Form.Label >Surname</Form.Label>
@@ -87,11 +106,11 @@ export default function CheckOutForm(){
                 </Form.Group>
                 <Form.Group >
                     <Form.Label>Email</Form.Label>
-                    <Form.Control onChange={handleOnChange} name="Email" value={userData.Email} type="text" placeholder="Enter email" />
+                    <Form.Control onChange={handleOnChange} name="Email" value={userData.Email} type="email" placeholder="Enter email" />
                 </Form.Group>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Cellphone</Form.Label>
-                    <Form.Control onChange={handleOnChange} name="Phone" value={userData.Phone}  placeholder="112334455" />
+                    <Form.Label>Phone</Form.Label>
+                    <Form.Control onChange={handleOnChange} name="Phone" value={userData.Phone} type="number" placeholder="112334455" />
                 </Form.Group>
                 
                 <div style={contButtons} >
