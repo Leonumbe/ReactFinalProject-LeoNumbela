@@ -19,7 +19,7 @@ export default function CartItem({key,id,image,name,price,stock,count, Indice, R
 
     return(
         <div>
-            <div class="cartItemContent">
+            <div class="cartItemContent" >
                         <div className="CartItemImage">
                             <img className="cartItemImage"  src={image}  alt="ss"/>
                         </div>

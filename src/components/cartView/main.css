@@ -18,24 +18,26 @@ img.img-fluid.mx-auto.d-block.width-100px {
 .cartItemContent{
 display: flex;
 flex-flow: row wrap;
-justify-content: start;
-align-items: flex-start;
-border: 5px 5px solid gray;
+border: 1px solid gray;
+padding: 10px;
+margin-bottom: 20px;
 }
 .cartItemImage{
-    max-width: 200px;
-    border-radius: 10px;
+    max-width: 250px;
+    border-radius: 15px;
 }
 .cardItemBody{
-    font-family: system-ui;
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin: 25px 50px;
-    padding: 10px;
+   display: flex;
+   flex-flow: column wrap;
+   justify-content: center;
+   margin: 0px 27px;
 
 }
 .cardItemText{
-    margin-bottom: 5px;
+    font-family: system-ui;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 5px;
 }
 .cartItemRemove{
     background: linear-gradient(to right, rgb(214, 218, 15), rgb(240, 88, 0));
@@ -54,14 +56,14 @@ border: 5px 5px solid gray;
 }
 /*--------------------------------*/
 
-/*cartViewContent*/
-.cartViewContent{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+
+.cartViewSumery{
+    border: 1px solid grey;
+    padding: 10px;
 }
 .cartViewSumeryHead{
     list-style: none;
+    margin: 10px;
 }
 .cartViewSumeryDetail{
     font-size: 1rem;
@@ -80,3 +82,11 @@ border: 5px 5px solid gray;
     display: flex;
     justify-content: space-between;
 }
+
+/*cartViewContent*/
+.cartViewContent{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+

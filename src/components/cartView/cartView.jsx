@@ -68,11 +68,9 @@ export default function CartView(){
             <ul className="">
 
                         <li className="cartViewSumeryHead"><strong className="text-muted">Purchase Summary</strong></li>
-                        <li className="cartViewSumeryDetail"><strong className="text-muted">Order Subtotal </strong><strong>:  $ {TotalPrice()}</strong></li>
-                        <li className="cartViewSumeryDetail"><strong className="text-muted">Ship&Hand</strong><strong>: Free</strong></li>
-                        <li className="cartViewSumeryTotal"><strong className="text-muted">Total </strong>
-                            <h3 className="fw-bold">: ${TotalPrice()}</h3>
-                        </li>
+                        <li className="cartViewSumeryDetail"><strong className="text-muted">Order Subtotal:</strong><strong>u$s  {TotalPrice()}.-</strong></li>
+                        <li className="cartViewSumeryDetail"><strong className="text-muted">Shipping&Handle:</strong><strong> Free  </strong></li>
+                        <li className="cartViewSumeryTotal"><strong className="text-muted">Total:</strong><strong>u$s {TotalPrice()}.-</strong></li>
             </ul>
 
             <Link to="/cart" className="text-dark" onClick={()=>{Clear()}}>
