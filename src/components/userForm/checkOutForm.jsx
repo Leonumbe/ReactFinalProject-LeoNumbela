@@ -1,18 +1,16 @@
 import React from "react";
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import { useState, useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 //Import to firebase
 import firestoreDB from "../../services/firebase";
 import {addDoc, collection, } from "firebase/firestore";
-import { Link } from "react-router-dom";
-
+//Boostrap
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+//Sweet Alert
 import swal from 'sweetalert';
-import { faRefresh } from "@fortawesome/free-solid-svg-icons";
-
 
 
 //styles
@@ -80,7 +78,7 @@ export default function CheckOutForm(){
                 
             }),
             Clear()
-            
+
             // Body del modal creado              
             // <div>
             //     <h1 className="display-3">Thanks You{userData.Name}!</h1> 
