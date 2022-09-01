@@ -71,9 +71,9 @@ export default function CheckOutForm(){
         return(
            
             swal({
-                title: "Thanks You!!",
-                text: `Your code is: ${purchaseSucess.id} `,
                 icon: "success",
+                title:`Thanks You! Your purchase was successfully processed`,
+                text: `Your PurchaseCode is: ${purchaseSucess.id} `,
                 button:`confirm`,
                 
             }),

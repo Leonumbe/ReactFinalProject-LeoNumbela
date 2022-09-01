@@ -1,5 +1,4 @@
 
-
 .emptyCartContent{
 display: flex;
 flex-direction: column;
@@ -13,4 +12,71 @@ font-size: 1.5rem;
 }
 img.img-fluid.mx-auto.d-block.width-100px {
     max-width: 12rem;
+}
+/*-----------------------------------------*/
+/*cartItem*/
+.cartItemContent{
+display: flex;
+flex-flow: row wrap;
+justify-content: start;
+align-items: flex-start;
+border: 5px 5px solid gray;
+}
+.cartItemImage{
+    max-width: 200px;
+    border-radius: 10px;
+}
+.cardItemBody{
+    font-family: system-ui;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 25px 50px;
+    padding: 10px;
+
+}
+.cardItemText{
+    margin-bottom: 5px;
+}
+.cartItemRemove{
+    background: linear-gradient(to right, rgb(214, 218, 15), rgb(240, 88, 0));
+    color: rgb(243, 243, 243);
+    font-size: 25px;
+    font-weight: 700;
+    margin: 15px;
+    padding: 10px 25px ;
+    border:whitesmoke ;
+    border-radius: 7.5px ;
+    box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    ;
+   
+}
+/*--------------------------------*/
+
+/*cartViewContent*/
+.cartViewContent{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.cartViewSumeryHead{
+    list-style: none;
+}
+.cartViewSumeryDetail{
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid rgb(104, 93, 93);
+    display: flex;
+    justify-content: space-between;
+}
+.cartViewSumeryTotal{
+    list-style: none;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid rgb(104, 93, 93);
+    display: flex;
+    justify-content: space-between;
 }

@@ -2,12 +2,15 @@
 import React, {useContext, useState} from "react";
 import { cartContext } from "../../context/cartContext";
 import CheckOutForm from "../userForm/checkOutForm";
-import Table from 'react-bootstrap/Table';
+import { Link } from "react-router-dom";
+import  "./main.css";
+//Librerias
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons' ;
-import { Link } from "react-router-dom";
+//componente
+import CartItem from "./cartItem";
+import Table from 'react-bootstrap/Table';
 import Button from "../button/button";
-import  "./main.css";
 //MODAL
 import button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -40,54 +43,37 @@ export default function CartView(){
             :
             <>
             <h1 className="title">Your Cart: {Badge()} product/s</h1>
-            <Table striped="columns">
-                <thead>
-                    <tr>
-                        <th>Nro</th>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>price</th>
-                        <th>Quantity</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
+            
+    <div className="cartViewContent">
+        <div>
                 { cart.map((items)=>{
-                        return(
-                            <>
-                            {/* rating={items.rating}
-                            category={items.category}
-                            description={items.description}
-                            stock={items.stock} */}
-                          <tbody key={items.id}>
-                            <tr>
-                              <td>{cart.indexOf(items)+1}</td>
-                              <td>
-                                <img src={items.image} className="img-fluid mx-auto d-block width-100px" alt="Sneaker"/>
-                              </td>
-                              <td>{items.name}</td>
-                              <td>u$s{items.price}.-</td>
-                              <td>{items.count}</td>
-                              <td><Link to={"#"} className="text-dark" onClick={()=>RemoveItem(items.id)}>
-                                <FontAwesomeIcon className="i" icon={faTrash} />
-                              </Link>
-                              </td>
-                            </tr>
-                          </tbody>
-                          </>
-                        );
+                    return(
+                        <CartItem
+                        key={items.id}
+                        id={items.id}
+                        name={items.name}
+                        image={items.image}
+                        stock={items.stock} 
+                        price={items.price}
+                        count={items.count}
+                        Indice={cart.indexOf(items)+1}
+                        RemoveItem={()=>RemoveItem(items.id)}
+                        />
+                    );
                     })
                 }
-            </Table>
+        </div>
+           
+        <div className="cartViewSumery">
+            <ul className="">
 
-
-            <ul className="list-unstyled mb-1">
-                        <li className="d-flex justify-content-start py-3 border-bottom"><strong className="text-muted">Order Subtotal </strong><strong>:  $ {TotalPrice()}</strong></li>
-                        <li className="d-flex justify-content-start py-3 border-bottom"><strong className="text-muted">Ship&Hand</strong><strong>: Free</strong></li>
-                        <li className="d-flex justify-content-start py-3 border-bottom"><strong className="text-muted">Total </strong>
+                        <li className="cartViewSumeryHead"><strong className="text-muted">Purchase Summary</strong></li>
+                        <li className="cartViewSumeryDetail"><strong className="text-muted">Order Subtotal </strong><strong>:  $ {TotalPrice()}</strong></li>
+                        <li className="cartViewSumeryDetail"><strong className="text-muted">Ship&Hand</strong><strong>: Free</strong></li>
+                        <li className="cartViewSumeryTotal"><strong className="text-muted">Total </strong>
                             <h3 className="fw-bold">: ${TotalPrice()}</h3>
                         </li>
             </ul>
-
 
             <Link to="/cart" className="text-dark" onClick={()=>{Clear()}}>
                 <FontAwesomeIcon className="i" icon={faTrash} />
@@ -97,6 +83,7 @@ export default function CartView(){
             <button onClick={handleShow} className={"btnBack"} text={"Procceed to checkout"}>
             Procceed to checkout
             </button>
+        </div>
            
             <Modal show={show} onHide={handleClose} size="md">
             <Modal.Header closeButton>
@@ -129,7 +116,8 @@ export default function CartView(){
         </Modal>
         
 
-            </>
+            </div>
+        </>
         }
         </div>
         </section>
