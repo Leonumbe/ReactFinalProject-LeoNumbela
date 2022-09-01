@@ -28,6 +28,7 @@ export default function CartItem({key,id,image,name,price,stock,count, Indice, R
                             <p className="cardItemText">Name: {name}</p>
                             <p className="cardItemText">Price: u$s{price}.-</p>
                             <p className="cardItemText">Quantity:{count}</p>
+                            <p className="cardItemText">Subtotal: u$s {count * price}.-</p>
                             <button  className="cartItemRemove" onClick={()=>RemoveItem(id)}>
                                 <FontAwesomeIcon className="i" icon={faTrash} />
                             </button>

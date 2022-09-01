@@ -39,7 +39,7 @@ margin-bottom: 20px;
     font-weight: 700;
     margin: 5px;
 }
-.cartItemRemove{
+.cartItemRemove, .cartClean{
     background: linear-gradient(to right, rgb(214, 218, 15), rgb(240, 88, 0));
     color: rgb(243, 243, 243);
     font-size: 25px;
@@ -60,6 +60,7 @@ margin-bottom: 20px;
 .cartViewSumery{
     border: 1px solid grey;
     padding: 10px;
+    margin-bottom: 20px;
 }
 .cartViewSumeryHead{
     list-style: none;
@@ -81,6 +82,16 @@ margin-bottom: 20px;
     border: 1px solid rgb(104, 93, 93);
     display: flex;
     justify-content: space-between;
+}
+.cartClean{
+    margin-right: 0px;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.btnAdapt{
+    margin-left: 10px;
+    padding: 6px 12px;
+    font-size: 25px;
 }
 
 /*cartViewContent*/

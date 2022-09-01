@@ -73,19 +73,19 @@ export default function CartView(){
                         <li className="cartViewSumeryTotal"><strong className="text-muted">Total:</strong><strong>u$s {TotalPrice()}.-</strong></li>
             </ul>
 
-            <Link to="/cart" className="text-dark" onClick={()=>{Clear()}}>
+            <Link to="/cart" className="cartClean" onClick={()=>{Clear()}}>
+                EmptyCart.
                 <FontAwesomeIcon className="i" icon={faTrash} />
-                Empty Cart
             </Link>
             
-            <button onClick={handleShow} className={"btnBack"} text={"Procceed to checkout"}>
-            Procceed to checkout
+            <button onClick={handleShow} className={"btnAdd btnAdapt"} text={"Procceed to checkout"}>
+            Proceed to checkout
             </button>
         </div>
            
             <Modal show={show} onHide={handleClose} size="md">
             <Modal.Header closeButton>
-            <Modal.Title>Procceed to checkout</Modal.Title>
+            <Modal.Title>Proceed to checkout</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
