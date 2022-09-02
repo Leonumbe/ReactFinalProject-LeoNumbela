@@ -77,11 +77,7 @@ export default function CheckOutForm(){
                 // }
             batch.commit()
             })
-
-
-        }) 
-
-
+        })
     }
 
     function handleReset(e){
