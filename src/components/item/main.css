@@ -1,0 +1,22 @@
+
+
+.cardStile{
+    margin-right: 1rem;
+    display: block;
+    justify-content: center;
+}
+.cardImage{
+    max-height: 275px;
+    max-width: auto;
+}
+.cartRating{
+    color: gold;
+    font-size: 1.25rem;
+}
+.cartButton{
+    display: flex;
+    justify-content: center;
+}
+.accordion-button{
+    padding: 5px;
+}

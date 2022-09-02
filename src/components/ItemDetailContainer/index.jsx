@@ -3,6 +3,7 @@ import CardsSelected from "../itemDetail/itemDetal"
 import getProducts from "../../helpers/getProducts.jsx";
 import { useParams } from "react-router-dom";
 import { MrMiyagi } from '@uiball/loaders'
+import Banner from "../banner/banner"
 
 export default function ItemDetailContainer(){
     const idUrl = useParams().id;
@@ -44,7 +45,8 @@ export default function ItemDetailContainer(){
                         stock={data.stock}
                         />
                 </div>
-}
+                }
+            <Banner/>
             </div>
         </section>
     )

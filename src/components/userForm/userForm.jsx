@@ -12,6 +12,7 @@ const form={
 
 
 
+
 export default function UserForm(){
 
     const [userData, setUserData]= useState({
@@ -41,27 +42,33 @@ export default function UserForm(){
         setUserData(copyUserData);
     }
     return(
-    <>
+    <div >
      <section className="title" id="Home">
-            <h1 className="title">Contact Us</h1>
+     <div className="max-width ">
+            <h1 className="title">Write Us</h1>
+            <h3 className="subtitle mb-3">We want to know about you, write us ....</h3>
         
             <Form onSubmit={handleSubmit} onReset={handleReset} style={form}>
-                <Form.Group >
+            <Row className="mb-2">
+                <Form.Group as={Col} >
                     <Form.Label>Name</Form.Label>
                     <Form.Control onChange={handleOnChange} name="Name" value={userData.id} type="text" placeholder="Warren" />
                 </Form.Group>
-                <Form.Group className="mb-3" >
+                <Form.Group as={Col} >
                     <Form.Label >Surname</Form.Label>
                     <Form.Control onChange={handleOnChange} name="Surname" value={userData.Surname} type="text" placeholder="Buffet" />
                 </Form.Group>
-                <Form.Group >
+            </Row>
+            <Row className="mb-2">
+                <Form.Group as={Col}>
                     <Form.Label>Email</Form.Label>
                     <Form.Control onChange={handleOnChange} name="Email" value={userData.Email} type="text" placeholder="Enter email" />
                 </Form.Group>
-                <Form.Group className="mb-3" >
+                <Form.Group as={Col}     >
                     <Form.Label>Address</Form.Label>
                     <Form.Control onChange={handleOnChange} name="Address" value={userData.Addres}  placeholder="1234 Main St" />
                 </Form.Group>
+            </Row>
 
                 <Row className="mb-3">
                     <Form.Group as={Col}>
@@ -80,7 +87,7 @@ export default function UserForm(){
                     </Form.Group>
                 </Row>
             
-                <Form.Group >
+                <Form.Group className="mb-3">
                 <Form.Label>Choose a topic</Form.Label>
                 <Form.Select onChange={handleOnChange} name="Topic" value={userData.Topic} aria-label="Default select example">
                 <option>Open this select menu</option>
@@ -105,8 +112,8 @@ export default function UserForm(){
                     Reset
                 </Button>
             </Form>
-
+        </div>
     </section>
-    </>
+    </div>
     );
 }

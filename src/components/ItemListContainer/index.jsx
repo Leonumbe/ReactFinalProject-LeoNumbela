@@ -4,6 +4,7 @@ import ItemList from "../itemList/itemList.jsx";
 import getProducts from "../../helpers/getProducts";
 import { useParams } from "react-router-dom";
 //import itemsData from "../../apiData/apiData.jsx";
+import Banner from "../banner/banner.jsx"
 import UserForm from "../userForm/userForm.jsx";
 import { MrMiyagi } from '@uiball/loaders'
 //import firebase
@@ -54,10 +55,10 @@ export default function ItemListContainer(props){
             </div>:
             <>
                 <h1 className="title">{props.greeting}</h1>
-                <div className= " d-flex flex-row flex-wrap">
+                <div className= " d-flex flex-row flex-wrap justify-content-center">
                     <ItemList data={data}/>
                 </div>
-                <UserForm/>
+                <Banner/>
             </>
             }
             </div>

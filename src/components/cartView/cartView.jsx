@@ -11,6 +11,7 @@ import { faTrash} from '@fortawesome/free-solid-svg-icons' ;
 import CartItem from "./cartItem";
 import Table from 'react-bootstrap/Table';
 import Button from "../button/button";
+import Banner from "../banner/banner";
 //MODAL
 import button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -82,8 +83,9 @@ export default function CartView(){
             Proceed to checkout
             </button>
         </div>
+       
            
-            <Modal show={show} onHide={handleClose} size="md">
+        <Modal show={show} onHide={handleClose} size="md">
             <Modal.Header closeButton>
             <Modal.Title>Proceed to checkout</Modal.Title>
             </Modal.Header>
@@ -115,6 +117,7 @@ export default function CartView(){
         
 
             </div>
+            <Banner/>
         </>
         }
         </div>

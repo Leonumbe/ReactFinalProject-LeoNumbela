@@ -1,0 +1,32 @@
+
+
+.bannerContent{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(175, 32, 218);
+    border-top: 1px solid rgb(175, 32, 218);
+    margin: 40px 0px;
+    padding: 25px 0px;
+    
+}
+.bannerModule{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+.bannerOne{
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgb(80, 78, 78);
+}
+.bannerTwo{
+    text-align: center;
+    font-size: 1rem;
+    font-family:sans-serif;
+    text-decoration: none;
+    color: rgb(171, 33, 189);;
+}
