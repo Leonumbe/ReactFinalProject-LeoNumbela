@@ -4,6 +4,7 @@ import ItemList from "../itemList/itemList.jsx";
 import getProducts from "../../helpers/getProducts";
 import { useParams } from "react-router-dom";
 //import itemsData from "../../apiData/apiData.jsx";
+import Home from "../home/home"
 import Banner from "../banner/banner.jsx"
 import UserForm from "../userForm/userForm.jsx";
 import { MrMiyagi } from '@uiball/loaders'
@@ -40,6 +41,10 @@ export default function ItemListContainer(props){
     }, [filterCat]);
 
     return(
+        <div>
+            <Home/>
+
+        
         <section className="title" id="Home">
             <div className="max-width ">
         {
@@ -59,10 +64,12 @@ export default function ItemListContainer(props){
                     <ItemList data={data}/>
                 </div>
                 <Banner/>
+
             </>
             }
             </div>
         </section>
+</div>
     )
 }
 
