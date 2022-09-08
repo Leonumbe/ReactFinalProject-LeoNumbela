@@ -21,30 +21,30 @@ function NavBar(){
             <nav id="" className="NavBar">
                 <div className="max-width">
                     <div className="containerNavbar">
-                        <div className="contNavB">
-                        <div className="contLogo">
-                            <Link to ="/">
-                            <img className="logo" src="/LogoAdap.png" alt='bakers team logo'/>
-                            </Link>
+                            <div className="contNavB">
+                                <div className="contLogo">
+                                    <Link to ="/home">
+                                    <img className="logo" src="/LogoAdap.png" alt='bakers team logo'/>
+                                    </Link>
+                                </div>
+                                <Navbar  expand="md">
+                                    <Container fluid>
+                                        <Navbar.Toggle aria-controls="navbarScroll" />
+                                        <Navbar.Collapse id="navbarScroll">
+                                            <Nav className=" contMenu"
+                                                style={{ maxHeight: '200px' }} navbarScroll>
+                                                    {menu.map((data => <Link to={data.url}> {data.title} </Link>))}
+                                            </Nav>
+                                        </Navbar.Collapse>
+                                    </Container>
+                                </Navbar>
+                            </div>
+                            <div>
+                                <CartWidget/>
+                            </div>
                         </div>
-                        <Navbar  expand="md">
-                            <Container fluid>
-                                <Navbar.Toggle aria-controls="navbarScroll" />
-                                <Navbar.Collapse id="navbarScroll">
-                                    <Nav className=" contMenu"
-                                        style={{ maxHeight: '200px' }} navbarScroll>
-                                            {menu.map((data => <Link to={data.url}> {data.title} </Link>))}
-                                    </Nav>
-                                </Navbar.Collapse>
-                            </Container>
-                        </Navbar>
-                    </div>
-                       <div>
-                        <CartWidget/>
-                       </div>
-                    </div>
                     <div>
-                        <Form className="d-flex">
+                        {/* <Form className="d-flex">
                             <Form.Control
                             type="search"
                             placeholder="Search"
@@ -52,7 +52,7 @@ function NavBar(){
                             aria-label="Search"
                             />
                             <Button variant="outline-success">Search</Button>
-                        </Form>
+                        </Form> */}
                     </div>
                 </div>
             </nav>

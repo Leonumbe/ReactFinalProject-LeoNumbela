@@ -12,6 +12,7 @@ import Footer from './components/footer/footer.jsx'
 import UserForm from './components/userForm/userForm.jsx';
 import CheckOutForm from './components/userForm/checkOutForm';
 import CartView from './components/cartView/cartView.jsx';
+import Home from "./components/home/home"
 //toastify
 import {ToastContainer} from 'react-toastify';
 //firebase
@@ -37,6 +38,7 @@ function App() {
         <CartContextProvider>
           <NavBar/>
           <Routes>
+            <Route path='/home' element={<Home/>}></Route>
             <Route path='/' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
             <Route path='/category/:category' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
             <Route path="/detail/:id" element={<ItemDetailContainer greeting = {headTitle.subtitle1} />}></Route>

@@ -18,7 +18,7 @@ img.img-fluid.mx-auto.d-block.width-100px {
 .cartItemContent{
 display: flex;
 flex-flow: row wrap;
-border: 1px solid gray;
+border-bottom: 1px solid gray;
 padding: 10px;
 margin-bottom: 20px;
 }
@@ -51,12 +51,16 @@ margin-bottom: 20px;
     box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);
     transition: all 0.3s ease;
     cursor: pointer;
-    ;
-   
 }
 /*--------------------------------*/
 
 
+/*cartViewContent*/
+.cartViewContent{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
 .cartViewSumery{
     border: 1px solid grey;
     padding: 10px;
@@ -71,7 +75,6 @@ margin-bottom: 20px;
     font-weight: 700;
     margin: 10px;
     padding: 5px;
-    border: 1px solid rgb(104, 93, 93);
     display: flex;
     justify-content: space-between;
 }
@@ -79,7 +82,7 @@ margin-bottom: 20px;
     list-style: none;
     margin: 10px;
     padding: 5px;
-    border: 1px solid rgb(104, 93, 93);
+    border-bottom: 1px solid rgb(104, 93, 93);
     display: flex;
     justify-content: space-between;
 }
@@ -94,10 +97,4 @@ margin-bottom: 20px;
     font-size: 25px;
 }
 
-/*cartViewContent*/
-.cartViewContent{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-}
 

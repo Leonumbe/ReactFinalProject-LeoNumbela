@@ -1,7 +1,7 @@
 /*css sobre componente navbar*/
 
 .NavBar{
-    background: rgb(214, 214, 214);
+    background: whitesmoke;
     width: 100%;
     padding: 10px 0;
     font-family: 'Ubuntu', sans-serif;
@@ -12,11 +12,10 @@
     max-width: 1300px;
     padding: 0 80px;
     margin: auto;
- 
 }
 .containerNavbar{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -27,7 +26,7 @@
     align-items: center;
 }
 .logo{
-    width: 75px;
+    width: 120px;
     transition: all 0.3s ease;
 }
 .logo:hover{
@@ -44,8 +43,8 @@
 .contMenu a{
     list-style: none;
     text-decoration: none;
-    color: white;
-    font-size: 18px;
+    color: rgb(207, 173, 19);
+    font-size: 21px;
     font-weight: 700;
     margin-top: 10px;
     margin-left: 25px;
@@ -53,5 +52,19 @@
     transition: color 0.3s ease;
 }
 .contMenu a:hover{
-    color: rgb(207, 173, 19);
+    color: rgb(107, 107, 107);
+}
+/*-----------------------------------------*/
+@media only screen and (max-width: 900px){
+    .contMenu a{
+        font-size: 18px;
+        margin-left: 7px;
+        margin-bottom: 0;
+        transition: color 0.3s ease;
+    }
+    .logo{
+        width: 80px;
+        transition: all 0.3s ease;
+        margin-right: 1rem;
+    }
 }

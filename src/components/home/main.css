@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+.home{
+    background-color: rgb(41, 39, 39);
+}
+.homeImg{
+    max-width: 450px;
+    margin: 1rem 0rem;
+}
+
+.imgHome{
+    box-shadow: 1px 1px 25px  rgb(145, 139, 139);
+    position: relative;
+    max-height: 540px;
+    border-radius: 1rem;
+    color: whitesmoke;
+}
+
+.homeContent{
+    padding: 3rem 0rem;
+    display: flex;
+    flex-flow: row-reverse nowrap ;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.homePhrases{
+    font-family: 'Staatliches', cursive;
+    max-width: 450px;
+}
+.homeText{
+    font-size: 4rem;
+    color: whitesmoke;
+}
+.homeTextSpam{
+    color: rgb(207, 173, 19);
+    font-size: 2rem;
+}
+
+/*-----------------------------------------*/
+@media only screen and (max-width: 1000px){
+    .imgHome{
+        max-height: 450px;
+    }
+    .homeText{
+        font-size: 3rem;
+    }
+    .homeTextSpam{
+        color: rgb(207, 173, 19);
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 775px){
+    .imgHome{
+        max-height: 400px;
+    }
+    .homeText{
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+    .homeTextSpam{
+        color: rgb(207, 173, 19);
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .homeContent{
+        padding: 3rem 0rem;
+        flex-flow: wrap ;
+    }
+    .homePhrases{
+        margin: 2rem 0rem;
+       text-align: center;
+    }
+    
+    .homeText{
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+    .homeTextSpam{
+        color: rgb(207, 173, 19);
+        font-size: 1rem;
+    }
+}
