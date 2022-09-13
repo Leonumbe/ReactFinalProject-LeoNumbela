@@ -1,33 +1,68 @@
 /*css sobre componente Footer*/
 
-footer{
-  padding: 20px 23px;
+.footer{
+  background-color: whitesmoke;
+  padding: 30px 0px;
   color: #353d45;
-  text-align: center;
   font-weight: 600;
   font-family: 'Ubuntu', sans-serif;
+ 
 }
-footer span a{
+.containerFooter{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.contentNavBarFooter{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+.navbarFooter{
+  color: rgb(207, 173, 19);
+  margin: 5px;
+  text-decoration: none;
+  text-align: start;
+  font-size: 13px;
+  transition: all 0.3s easy;
+}
+.navbarFooter:hover{
+  color: rgb(107, 107, 107);
+  scale: 1.05;
+}
+.footer span a{
   font-family:'Oxygen';
   font-weight: 700;
-  font-size: 25px;
-  color: crimson;
+  font-size: 1rem;
+  color: rgb(175, 32, 218);
   text-decoration: none;
 }
-footer span a:hover{
+.footer span a:hover{
   text-decoration: underline;
 }
-footer .social{
-  padding: 10px 0;
+.socialMedia{
+  padding: 0px 10px 10px;
 
 }
-footer .social .i{
-  font-size: 30px;
+.socialMedia .i{
+  font-size: 20px;
   color: #353d45;
   transition: all 0.3s easy;
   padding: 0 5px;
 }
-footer .social .i:hover{
+.socialMedia .i:hover{
   transform: scale(1.15);
-  color: crimson;
+  color:rgb(175, 32, 218);
+}
+.copyFrase, .socialMedia, .createName{
+  display: flex;
+  justify-content: end;
+}
+.createName{
+  font-size: 13px;
+}
+.copyFrase{
+  font-size: 10px;
+  margin-top: 1.25rem;
 }

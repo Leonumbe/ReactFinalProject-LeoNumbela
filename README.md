@@ -1,3 +1,54 @@
+**Ecommerce final project || React by CoderHouse
+
+[SPA] single page aplication, Simulates being an online store selling Sneackers, where the items are hosted on FireBase.
+
+The user will be able to live the complete purchase experience, delete and add the product. 
+See the order total and complete the purchase by filling out a form.
+A unique id is generated for the transaction and creates a new object in firebase with customer data and chosen products.
+
+I used for this page:
+React JS
+React Router Dom
+components, states and context
+React Boostraps for navbar and cards
+css with camelCase Styles
+FireBase how database
+Sweet alert
+stopper (Slider)
+fontAwesome
+Toastify
+
+This is the dependences installed:
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.2",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@popperjs/core": "^2.11.5",
+    "@uiball/loaders": "^1.2.6",
+    "babel-plugin-macros": "^3.1.0",
+    "bootstrap": "^5.2.0",
+    "core-js": "^3.24.1",
+    "firebase": "^9.9.3",
+    "joi": "^17.6.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^9.0.7",
+    "sweetalert": "^2.1.2"
+
+
+All the repository was pushed to GitHUb
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
