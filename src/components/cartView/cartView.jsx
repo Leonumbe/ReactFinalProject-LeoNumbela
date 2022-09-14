@@ -36,7 +36,7 @@ export default function CartView(){
                     <h1 className="title">Your Cart is Empty!!!!</h1>
                     <h3 className="textAdapt">Look like you have not added anything to your Cart</h3>
                     <h3 className="textAdapt">Go ahead & explore our Categories</h3>
-                    <Link to="/"  >
+                    <Link to="/home"  >
                         <Button className={"btnBack"} text={"Back to Home"}></Button>
                     </Link>
                 </div>
@@ -66,7 +66,7 @@ export default function CartView(){
         </div>
            
         <div className="cartViewSumery">
-            <ul>
+            <ul className="cartViewSumeryUl">
                 <li className="cartViewSumeryHead"><strong className="text-muted">Purchase Summary</strong></li>
                 <li className="cartViewSumeryDetail"><strong className="text-muted">Order Subtotal:</strong><strong>u$s  {TotalPrice()}.-</strong></li>
                 <li className="cartViewSumeryDetail"><strong className="text-muted">Shipping&Handle:</strong><strong> Free  </strong></li>
@@ -74,43 +74,30 @@ export default function CartView(){
             </ul>
 
             <Link to="/cart" className="cartClean" onClick={()=>{Clear()}}>
-                EmptyCart.
-                <FontAwesomeIcon className="i" icon={faTrash} />
+                <button className="btnClean">
+                Empty Cart
+                </button>
             </Link>
             
-            <button onClick={handleShow} className={"btnAdd btnAdapt"} text={"Procceed to checkout"}>
-            Proceed to checkout
+            <button onClick={handleShow} className={"btnPurchase"} text={"Procceed to checkout"}>
+                Proceed to checkout
             </button>
         </div>
        
            
         <Modal show={show} onHide={handleClose} size="md">
             <Modal.Header closeButton>
-            <Modal.Title>Proceed to checkout</Modal.Title>
+                <Modal.Title className="title">
+                    Proceed to checkout
+                </Modal.Title>
             </Modal.Header>
-            <Modal.Body>
-                {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                    type="email"
-                    placeholder="name@example.com"
-                    autoFocus
-                />
-                </Form.Group>
-                <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlTextarea1"
-                >
-                <Form.Label>Example textarea</Form.Label>
-                <Form.Control as="textarea" rows={3} />
-                </Form.Group> */}
-            <CheckOutForm />
-            </Modal.Body>
+                <Modal.Body>
+                    <CheckOutForm/>
+                </Modal.Body>
             <Modal.Footer>
-            <button variant="secondary" onClick={handleClose} className={"btnBack"}>
-                Close
-            </button>
-            
+                <button  onClick={handleClose} className={"btnBackP"}>
+                    Close
+                </button>
             </Modal.Footer>
         </Modal>
         

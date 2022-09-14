@@ -37,19 +37,7 @@ margin-bottom: 20px;
     font-weight: 700;
     margin: 5px;
 }
-.cartItemRemove, .cartClean{
-    background: linear-gradient(to right, rgb(214, 218, 15), rgb(240, 88, 0));
-    color: rgb(243, 243, 243);
-    font-size: 25px;
-    font-weight: 700;
-    margin: 15px;
-    padding: 10px 25px ;
-    border:whitesmoke ;
-    border-radius: 7.5px ;
-    box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
+
 /*--------------------------------*/
 
 
@@ -62,6 +50,7 @@ margin-bottom: 20px;
 .cartViewSumery{
     padding: 10px;
     margin-bottom: 20px;
+    font-family: system-ui;
 }
 .cartViewSumeryHead{
     list-style: none;
@@ -76,9 +65,9 @@ margin-bottom: 20px;
     justify-content: space-between;
 }
 .cartViewSumeryTotal{
-    list-style: none;
     margin: 10px;
     padding: 5px;
+    list-style: none;
     border-bottom: 1px solid rgb(104, 93, 93);
     display: flex;
     justify-content: space-between;
@@ -86,18 +75,18 @@ margin-bottom: 20px;
 .cartClean{
     margin-right: 0px;
     text-decoration: none;
-    padding: 10px 15px;
 }
-.btnAdapt{
-    margin-left: 10px;
-    padding: 6px 12px;
-    font-size: 25px;
+.btnPurchase{
+    font-size: 18px;
 }
 
-@media only screen and (max-width: 1065px){
+@media only screen and (max-width: 1100px){
     .cartItemImage{
         max-width: 200px;
     }
+    .cartItemContent{
+        justify-content: center;
+        }
     .cartViewContent{
         flex-flow: row nowrap;
         justify-content: center;

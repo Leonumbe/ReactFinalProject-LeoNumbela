@@ -142,12 +142,12 @@ export default function CheckOutForm(){
                 
                 <div style={contButtons} >
 
-                <Button className="btnBack" type="reset">
+                <button className="btnBackB" type="reset">
                     Reset
-                </Button>
-                <Button className="btnAddB" type="submit">
+                </button>
+                <button className="btnAddB" type="submit">
                     Submit
-                </Button>
+                </button>
                 </div>
 
             </Form>

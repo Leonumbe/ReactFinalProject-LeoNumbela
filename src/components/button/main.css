@@ -3,6 +3,7 @@
     display: inline-block;
     justify-content: center;
     color: #fff;
+    font-family: system-ui;
     font-size: 15px;
     font-weight: 700;
     margin: 5px;
@@ -15,19 +16,21 @@
     text-decoration: none;
 }
 .btnAddB{
-    margin: 2rem;
-    padding: 11px 30px ;
+    height: 50px;
+    margin: 1rem;
+    padding: 10px 30px;
+    font-family: system-ui;
 }
 .btnAddC{
     margin: 0px;
     padding: 10px 40px ;
 }
 .btnPurchase{
-    margin: 2rem;
-    padding: 11px 30px ;
+    margin: 1rem;
+    padding: 10px 25px ;
 }
 
-.btnBack, .btnBackC, .btnClean, .btnRemove{
+.btnBack, .btnBackB, .btnBackC, .btnBackP, .btnClean, .btnRemove{
     background: linear-gradient(to right, rgb(214, 218, 15), rgb(240, 88, 0));
     border:whitesmoke ;
     color: rgb(243, 243, 243);
@@ -45,11 +48,19 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.btnBackC{
+.btnBackB{
+    height: 50px;
+    margin: 1rem;
+    padding: 10px 30px;
+    font-family: system-ui; 
+    font-size: 1rem;
+}
+.btnBackC, .btnBackP{
     font-size: 1rem;
     font-weight: 600;
     padding: 8px 25px ;
 }
+
 .btnRemove{
     font-size: 20px;
     font-weight: 500;
