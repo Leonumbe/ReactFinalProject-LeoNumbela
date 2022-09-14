@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 //import itemsData from "../../apiData/apiData.jsx";
 import Home from "../home/home"
 import Banner from "../banner/banner.jsx"
-import UserForm from "../userForm/userForm.jsx";
 import { MrMiyagi } from '@uiball/loaders'
 //import firebase
 import firestoreDB from "../../services/firebase";
@@ -15,7 +14,7 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 export default function ItemListContainer(props){
     const filterCat = useParams().category;
     const [data, setData] = useState([]);
-    //console.log(useParams())    
+    //console.log(useParams())   
     //console.log(filterCat)  
 
     useEffect(() => {
@@ -34,7 +33,7 @@ export default function ItemListContainer(props){
                 })
 
             }else{
-            setData(respuesta)
+                setData(respuesta)
             }
         }).catch((error) => alert(error));
        
@@ -42,34 +41,30 @@ export default function ItemListContainer(props){
 
     return(
         <div>
-            <Home/>
-
-        
-        <section className="title" id="Home">
-            <div className="max-width ">
-        {
-            (data.length == 0)?
-            <div className="loaderStile">
-                <MrMiyagi 
-                size={200}
-                lineWeight={3.5}
-                speed={0.75} 
-                color="rgb(220, 0, 240)" 
-                textAlign="center"
-                />
-            </div>:
-            <>
-                <h1 className="title">{props.greeting}</h1>
-                <div className= " d-flex flex-row flex-wrap justify-content-center">
-                    <ItemList data={data}/>
+            <section className="title" id="Product">
+                <div className="max-width ">
+                {
+                (data.length == 0)?
+                    <div className="loaderStile">
+                        <MrMiyagi 
+                        size={200}
+                        lineWeight={3.5}
+                        speed={0.75} 
+                        color="rgb(220, 0, 240)" 
+                        textAlign="center"
+                        />
+                    </div>:
+                    <>
+                        <h1 className="title">{props.greeting}</h1>
+                        <div className= " d-flex flex-row flex-wrap justify-content-center">
+                            <ItemList data={data}/>
+                        </div>
+                        <Banner/>
+                    </>
+                }
                 </div>
-                <Banner/>
-
-            </>
-            }
-            </div>
-        </section>
-</div>
+            </section>
+        </div>
     )
 }
 

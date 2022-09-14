@@ -1,20 +1,20 @@
 
-
-.counterBtn{
-  text-align: center;
-}
-
 .counterSelector{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    margin-top: 5px;
+    align-items: center;
 }
 .btnCounterA{
+    font-size: 2rem;
     margin-right: 20px;
     cursor: pointer;
 }
 .btnCounterB{
+    font-size: 2rem;
     margin-left: 20px ;
     cursor: pointer;
+}
+.counterBtn{
+  text-align: center;
 }

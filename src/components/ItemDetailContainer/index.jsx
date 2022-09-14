@@ -17,7 +17,7 @@ export default function ItemDetailContainer(){
     }, []);
 
     return(
-        <section className="title" id="Home">
+        <section className="title" id="itemDetail">
             <div className="max-width ">
                 <h1 className="title">Selection</h1>
                {

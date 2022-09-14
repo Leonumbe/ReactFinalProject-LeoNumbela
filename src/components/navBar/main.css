@@ -7,7 +7,6 @@
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
 }
-
 .max-width{
     max-width: 1300px;
     padding: 0 80px;
@@ -42,7 +41,6 @@
 .contMenu{
     list-style: none;
     display: inline-block;
-
 }
 .contMenu a{
     list-style: none;
@@ -74,6 +72,7 @@
     .btnToggle{
         padding: 0px;
     }
+   
 }
 @media only screen and (max-width: 500px){
     .contMenu a{

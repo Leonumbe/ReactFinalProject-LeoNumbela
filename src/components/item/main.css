@@ -4,6 +4,7 @@
     margin-right: 1rem;
     display: block;
     justify-content: center;
+    font-family: "Ubuntu";
 }
 .cardImage{
     max-height: 275px;
@@ -19,4 +20,10 @@
 }
 .accordion-button{
     padding: 5px;
+}
+.descripTitle, .titleCardName{
+    font-family: 'Staatliches', cursive;
+}
+.descripCard{
+    font-size: 12px;
 }

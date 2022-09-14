@@ -17,12 +17,12 @@ export default function ItemCount(props) {
     return(  
         <div className="counterCont">
             <div className="counterSelector">
-                <h1 onClick={handleDecrease} className="btnCounterA " type="button">-</h1>
+                <h3 onClick={handleDecrease} className="btnCounterA " type="button">-</h3>
                     <h1>{count}</h1>
-                <h1 onClick={handleIncrease} className="btnCounterB" type="button">+</h1>
+                <h3 onClick={handleIncrease} className="btnCounterB" type="button">+</h3>
             </div>
             <div className="counterBtn" >
-                <Button onTouch={()=> props.onAddCart(count)} className={"btnAdd"} text={'Add Cart'} /> 
+                <Button onTouch={()=> props.onAddCart(count)} className={"btnAddC"} text={'Add Cart'} /> 
             </div>
         </div>
     );

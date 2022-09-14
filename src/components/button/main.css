@@ -1,15 +1,15 @@
-.btnAdd, .btnAddB, .btnPurchase{
+.btnAdd, .btnAddB, .btnAddC, .btnPurchase{
     background: linear-gradient(to right, rgb(106, 6, 236), rgb(220, 0, 240));
     display: inline-block;
     justify-content: center;
     color: #fff;
     font-size: 15px;
     font-weight: 700;
-    margin: 10px;
-    padding: 12px 40px ;
+    margin: 5px;
+    padding: 10px 25px ;
     border:whitesmoke ;
     border-radius: 7.5px ;
-    box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);
+    box-shadow: 1px 1px 5px rgba(115, 132, 136, 0.382);
     transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
@@ -18,27 +18,37 @@
     margin: 2rem;
     padding: 11px 30px ;
 }
+.btnAddC{
+    margin: 0px;
+    padding: 10px 40px ;
+}
 .btnPurchase{
     margin: 2rem;
     padding: 11px 30px ;
 }
 
-.btnBack, .btnClean, .btnRemove{
+.btnBack, .btnBackC, .btnClean, .btnRemove{
     background: linear-gradient(to right, rgb(214, 218, 15), rgb(240, 88, 0));
+    border:whitesmoke ;
     color: rgb(243, 243, 243);
+    font-family: system-ui;
     font-size: 20px;
     font-weight: 700;
     margin: 2rem;
     padding: 10px 15px ;
-    border:whitesmoke ;
     border-radius: 7.5px ;
     box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-decoration: none;
     display: inline-block;
     flex-flow: row nowrap;
     justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btnBackC{
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 25px ;
 }
 .btnRemove{
     font-size: 20px;
