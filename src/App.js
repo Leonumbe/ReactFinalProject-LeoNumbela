@@ -37,18 +37,18 @@ function App() {
       <BrowserRouter>
         <CartContextProvider>
           <NavBar/>
-          <Routes>
-            <Route path='/home' element={<Home/>}></Route>
-            <Route path='/' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
-            <Route path='/category/:category' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
-            <Route path="/detail/:id" element={<ItemDetailContainer greeting = {headTitle.subtitle1} />}></Route>
-            <Route path='/contacUs' element={<UserForm/>}></Route>
-            <Route path='/checkOut' element={<CheckOutForm/>}></Route>
-            <Route path='/cart' element={<CartView/>}></Route>
-            <Route path='*' element={<h1 className='error'>{Error.title}</h1>}></Route>
-          </Routes>
+            <Routes>
+              <Route path='/home' element={<Home/>}></Route>
+              <Route path='/' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
+              <Route path='/category/:category' element={ <ItemListContainer greeting = {headTitle.title}/>}></Route>
+              <Route path="/detail/:id" element={<ItemDetailContainer greeting = {headTitle.subtitle1} />}></Route>
+              <Route path='/contacUs' element={<UserForm/>}></Route>
+              <Route path='/checkOut' element={<CheckOutForm/>}></Route>
+              <Route path='/cart' element={<CartView/>}></Route>
+              <Route path='*' element={<h1 className='error'>{Error.title}</h1>}></Route>
+            </Routes>
           <Footer/>
-          </CartContextProvider>
+        </CartContextProvider>
         <ToastContainer />
       </BrowserRouter>
     </div>

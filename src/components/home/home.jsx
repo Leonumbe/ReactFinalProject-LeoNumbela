@@ -20,7 +20,7 @@ export default function Home(){
                                 <>
                                     <h1 className="homeText">{item.textA}</h1>
                                     <h1 className="homeText">{item.textB}</h1>
-                                    <h1 className="homeText">{item.textC}<spam className="homeTextSpam">{item.textC2}</spam></h1>
+                                    <h1 className="homeText">{item.textC}<span className="homeTextSpam">{item.textC2}</span></h1>
                                 </>
                                 )
                             }

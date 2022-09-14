@@ -6,3 +6,9 @@
 .cartSet:hover{
     transform: scale(1.15);
 }
+@media only screen and (max-width: 500px){
+    .cartSet{
+        font-size: 20px;
+    } 
+  
+}

@@ -32,6 +32,10 @@
 .logo:hover{
     transform: scale(1.15);
 }
+.btnToggle {
+    font-size: 1rem;
+    padding: 3px;
+}
 .menu{
     display: flex ;
 }
@@ -44,7 +48,7 @@
     list-style: none;
     text-decoration: none;
     color: rgb(207, 173, 19);
-    font-size: 21px;
+    font-size: 20px;
     font-weight: 700;
     margin-top: 10px;
     margin-left: 25px;
@@ -66,5 +70,21 @@
         width: 80px;
         transition: all 0.3s ease;
         margin-right: 1rem;
+    }
+    .btnToggle{
+        padding: 0px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .contMenu a{
+        font-size: 0.9rem;
+    }
+    .logo{
+        width: 60px;
+        transition: all 0.3s ease;
+        margin-right: 0rem;
+    }
+    .max-width{
+        padding: 0px 40px;
     }
 }

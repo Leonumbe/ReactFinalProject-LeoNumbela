@@ -8,9 +8,9 @@ import { useState } from "react";
 
 const form={
     padding: "2rem",
+    fontFamily: "Ubuntu", 
+    fontSize:"1.5rem",
 }
-
-
 
 
 export default function UserForm(){

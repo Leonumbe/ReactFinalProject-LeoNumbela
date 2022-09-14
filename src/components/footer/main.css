@@ -6,7 +6,6 @@
   color: #353d45;
   font-weight: 600;
   font-family: 'Ubuntu', sans-serif;
- 
 }
 .containerFooter{
   display: flex;
@@ -24,7 +23,7 @@
   margin: 5px;
   text-decoration: none;
   text-align: start;
-  font-size: 13px;
+  font-size: 1rem;
   transition: all 0.3s easy;
 }
 .navbarFooter:hover{
@@ -64,5 +63,19 @@
 }
 .copyFrase{
   font-size: 10px;
-  margin-top: 1.25rem;
+  margin-top: 2.5rem;
+}
+/*-----------------------------------------*/
+@media only screen and (max-width: 450px){
+  .navbarFooter{
+    font-size: 10px;
+  }
+  .copyFrase{
+    margin-top: 1.25rem;
+    font-size: 8px;
+  }
+  .createName{
+    font-size: 10px;
+  }
+
 }

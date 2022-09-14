@@ -29,8 +29,8 @@ function NavBar(){
                                 </div>
                                 <Navbar  expand="md">
                                     <Container fluid>
-                                        <Navbar.Toggle aria-controls="navbarScroll" />
-                                        <Navbar.Collapse id="navbarScroll">
+                                        <Navbar.Toggle aria-controls="navbarScroll" className="btnToggle"/>
+                                        <Navbar.Collapse id="navbarScroll" >
                                             <Nav className=" contMenu"
                                                 style={{ maxHeight: '200px' }} navbarScroll>
                                                     {menu.map((data => <Link to={data.url}> {data.title} </Link>))}
