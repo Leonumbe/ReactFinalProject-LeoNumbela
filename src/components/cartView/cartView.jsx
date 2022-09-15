@@ -80,7 +80,7 @@ export default function CartView(){
             </Link>
             
             <button onClick={handleShow} className={"btnPurchase"} text={"Procceed to checkout"}>
-                Proceed to checkout
+                Proceed checkout
             </button>
         </div>
        

@@ -47,6 +47,9 @@ margin-bottom: 20px;
     flex-flow: row wrap;
     justify-content: space-around;
 }
+.cartViewSumeryUl{
+    padding-left: 0px;
+}
 .cartViewSumery{
     padding: 10px;
     margin-bottom: 20px;

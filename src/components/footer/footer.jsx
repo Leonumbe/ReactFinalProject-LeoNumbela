@@ -9,7 +9,7 @@ export default function Footer(){
 
 const navbarFooter=[
     {url:'/home', title:'Home'},
-    {url:'/About Us', title:'About Us'},
+    {url:'/About Us', title:'Baker Team'},
     {url:'/', title:'Our Products'},
     {url:'/contacUs', title:'Contact Us'},
 ]

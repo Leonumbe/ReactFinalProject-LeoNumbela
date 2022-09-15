@@ -4,19 +4,19 @@
     justify-content: center;
     color: #fff;
     font-family: system-ui;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
     margin: 5px;
-    padding: 10px 25px ;
+    padding: 8px 20px ;
     border:whitesmoke ;
     border-radius: 7.5px ;
-    box-shadow: 1px 1px 5px rgba(115, 132, 136, 0.382);
+    box-shadow: 1px 1px 15px rgba(115, 132, 136, 0.382);
     transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
 }
 .btnAddB{
-    height: 50px;
+    height: 40px;
     margin: 1rem;
     padding: 10px 30px;
     font-family: system-ui;
@@ -26,7 +26,7 @@
     padding: 10px 40px ;
 }
 .btnPurchase{
-    margin: 1rem;
+    margin: 10px;
     padding: 10px 25px ;
 }
 
@@ -35,12 +35,12 @@
     border:whitesmoke ;
     color: rgb(243, 243, 243);
     font-family: system-ui;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     margin: 2rem;
     padding: 10px 15px ;
     border-radius: 7.5px ;
-    box-shadow: 1px 1px 25px rgba(115, 132, 136, 0.382);
+    box-shadow: 1px 1px 15px rgba(115, 132, 136, 0.382);
     display: inline-block;
     flex-flow: row nowrap;
     justify-content: center;
@@ -49,7 +49,7 @@
     transition: all 0.3s ease;
 }
 .btnBackB{
-    height: 50px;
+    height: 40px;
     margin: 1rem;
     padding: 10px 30px;
     font-family: system-ui; 
@@ -62,14 +62,13 @@
 }
 
 .btnRemove{
-    font-size: 20px;
-    font-weight: 500;
-    margin: 1rem;
-    padding: 10px 25px ;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px ;
 }
 .btnClean{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
-    margin: 1rem;
+    margin: 10px;
     padding: 10px 25px ;
 }

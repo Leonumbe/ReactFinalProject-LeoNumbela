@@ -59,8 +59,8 @@
 /*-----------------------------------------*/
 @media only screen and (max-width: 900px){
     .contMenu a{
-        font-size: 18px;
-        margin-left: 7px;
+        font-size: 16px;
+        margin-left: 10px;
         margin-bottom: 0;
         transition: color 0.3s ease;
     }
