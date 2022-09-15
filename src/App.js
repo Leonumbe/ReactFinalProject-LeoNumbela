@@ -1,5 +1,4 @@
-//css
-import './App.css';
+
 //router
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 //Provider
@@ -9,10 +8,11 @@ import NavBar from './components/navBar/navBar.jsx';
 import ItemListContainer from './components/ItemListContainer/index';
 import ItemDetailContainer from './components/ItemDetailContainer/index';
 import Footer from './components/footer/footer.jsx'
-import UserForm from './components/userForm/userForm.jsx';
 import CheckOutForm from './components/userForm/checkOutForm';
 import CartView from './components/cartView/cartView.jsx';
-import Home from "./components/home/home"
+import Home from "./pages/home.jsx"
+import UserForm from './pages/userForm.jsx';
+import NoFound from "./pages/error404.jsx"
 //toastify
 import {ToastContainer} from 'react-toastify';
 //firebase
@@ -26,9 +26,7 @@ const headTitle = {
   subtitle1:"Selections",
   subtitle2:"Contact Us",
 };
-const Error = {
-  title:"404 Mistake",
-};
+
 
 function App() {
   //console.log(firestoreDB)
@@ -45,7 +43,7 @@ function App() {
               <Route path='/contacUs' element={<UserForm/>}></Route>
               <Route path='/checkOut' element={<CheckOutForm/>}></Route>
               <Route path='/cart' element={<CartView/>}></Route>
-              <Route path='*' element={<h1 className='error'>{Error.title}</h1>}></Route>
+              <Route path='*' element={<NoFound/>}></Route>
             </Routes>
           <Footer/>
         </CartContextProvider>

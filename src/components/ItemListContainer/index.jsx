@@ -4,7 +4,6 @@ import ItemList from "../itemList/itemList.jsx";
 import getProducts from "../../helpers/getProducts";
 import { useParams } from "react-router-dom";
 //import itemsData from "../../apiData/apiData.jsx";
-import Home from "../home/home"
 import Banner from "../banner/banner.jsx"
 import { MrMiyagi } from '@uiball/loaders'
 //import firebase
