@@ -12,7 +12,6 @@ import Row from 'react-bootstrap/Row';
 //Sweet Alert
 import swal from 'sweetalert';
 
-
 //styles
 const contButtons={
     display: "flex",

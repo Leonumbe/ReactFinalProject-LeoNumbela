@@ -5,29 +5,40 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useState } from "react";
 
+//Import to firebase
+import firestoreDB from "../services/firebase";
+import {addDoc, collection} from "firebase/firestore";
 
 const form={
     padding: "2rem",
     fontFamily: "Ubuntu", 
     fontSize:"1.5rem",
 }
-
+const btnForm={
+    display: "flex",
+    justifyContent:"space-around",
+}
 
 export default function UserForm(){
 
     const [userData, setUserData]= useState({
-        name:"", Surname:"", Email:"", Address:"", City:"", State:"", ZipCode:"", Topic:"", Text:""
+        Name:"", Surname:"", Email:"", Address:"", City:"", State:"", ZipCode:"", Topic:"", Text:""
     });
 
-    function handleSubmit(event){
-         event.preventDefault();
-         console.log(userData);
-         setUserData({name:"", Surname:"", Email:"", Address:"",
-         City:"", State:"", ZipCode:"", Topic:"", Text:""});
+    async function handleSubmit(event){
+        event.preventDefault();
+        console.log(userData);
+        setUserData({name:"", Surname:"", Email:"", Address:"",
+        City:"", State:"", ZipCode:"", Topic:"", Text:""});
+
+        const customerContact = collection(firestoreDB, "customerContact") ;
+        const docRef = await  addDoc(customerContact, userData);
+        setUserData(docRef);
+
     }
     function handleReset(e){
         e.preventDefault();
-        setUserData({name:"", Surname:"", Email:"", Address:"",
+        setUserData({Name:"", Surname:"", Email:"", Address:"",
                  City:"", State:"", ZipCode:"", Topic:"", Text:""
         });
     }
@@ -52,7 +63,7 @@ export default function UserForm(){
             <Row className="mb-2">
                 <Form.Group as={Col} >
                     <Form.Label>Name</Form.Label>
-                    <Form.Control onChange={handleOnChange} name="Name" value={userData.id} type="text" placeholder="Warren" />
+                    <Form.Control onChange={handleOnChange} name="Name" value={userData.Name} type="text" placeholder="Warren" />
                 </Form.Group>
                 <Form.Group as={Col} >
                     <Form.Label >Surname</Form.Label>
@@ -66,14 +77,14 @@ export default function UserForm(){
                 </Form.Group>
                 <Form.Group as={Col}     >
                     <Form.Label>Address</Form.Label>
-                    <Form.Control onChange={handleOnChange} name="Address" value={userData.Addres}  placeholder="1234 Main St" />
+                    <Form.Control onChange={handleOnChange} name="Address" value={userData.Address}  placeholder="1234 Main St" />
                 </Form.Group>
             </Row>
 
                 <Row className="mb-3">
                     <Form.Group as={Col}>
                         <Form.Label>City</Form.Label>
-                        <Form.Control onChange={handleOnChange}  name="City" value={userData.City}/>
+                        <Form.Control onChange={handleOnChange} name="City" value={userData.City}/>
                     </Form.Group>
 
                     <Form.Group as={Col} >
@@ -90,27 +101,29 @@ export default function UserForm(){
                 <Form.Group className="mb-3">
                 <Form.Label>Choose a topic</Form.Label>
                 <Form.Select onChange={handleOnChange} name="Topic" value={userData.Topic} aria-label="Default select example">
-                <option>Open this select menu</option>
-                <option value="Buy">Buy</option>
-                <option value="Deliver">Deliver</option>
-                <option value="Refound">Refund</option>
-                <option value="Other">Other</option>
+                    <option>Open this select menu</option>
+                    <option value="Buy">Buy</option>
+                    <option value="Deliver">Deliver</option>
+                    <option value="Refound">Refund</option>
+                    <option value="Other">Other</option>
                 </Form.Select>
                 </Form.Group>
 
                 <Form.Group>
                 <Form.Label>Write us</Form.Label>
                 <Form.Control
-                    type="textarea" onChange={handleOnChange}  name="Text" value={userData.Surname}
+                    type="textarea" onChange={handleOnChange}  name="Text" value={userData.Text}
                     />
                 </Form.Group>
-                <Button className="btnBack" type="submit">
-                    Submit
-                </Button>
+                <div style={btnForm}>
+                    <Button className="btnBackB" type="reset">
+                        Reset
+                    </Button>
+                    <Button className="btnAddB" type="submit">
+                        Submit
+                    </Button>
+                </div>
 
-                <Button className="btnBack" type="reset">
-                    Reset
-                </Button>
             </Form>
         </div>
     </section>
