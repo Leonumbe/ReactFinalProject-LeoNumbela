@@ -1,11 +1,9 @@
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons' ;
 import React from 'react';
 import  "./main.css";
 
 export default function CartItem({key,id,image,name,price,stock,count, Indice, RemoveItem}){
-
     return(
         <div>
             <div class="cartItemContent" >

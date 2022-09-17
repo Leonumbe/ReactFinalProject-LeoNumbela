@@ -1,10 +1,7 @@
 import "./main.css";
 import CartWidget from "./cartWidget/cartWidget.jsx";
 import { Link } from "react-router-dom";
-
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
@@ -21,38 +18,27 @@ function NavBar(){
             <nav id="" className="NavBar">
                 <div className="max-width">
                     <div className="containerNavbar">
-                            <div className="contNavB">
-                                <div className="contLogo">
-                                    <Link to ="/home">
-                                    <img className="logo" src="/LogoAdap.png" alt='bakers team logo'/>
-                                    </Link>
-                                </div>
-                                <Navbar  expand="md">
-                                    <Container fluid>
-                                        <Navbar.Toggle aria-controls="navbarScroll" className="btnToggle"/>
-                                        <Navbar.Collapse id="navbarScroll" >
-                                            <Nav className=" contMenu"
-                                                style={{ maxHeight: '200px' }} navbarScroll>
-                                                    {menu.map((data => <Link to={data.url}> {data.title} </Link>))}
-                                            </Nav>
-                                        </Navbar.Collapse>
-                                    </Container>
-                                </Navbar>
+                        <div className="contNavB">
+                            <div className="contLogo">
+                                <Link to ="/home">
+                                <img className="logo" src="/LogoAdap.png" alt='bakers team logo'/>
+                                </Link>
                             </div>
-                            <div>
-                                <CartWidget/>
-                            </div>
+                            <Navbar  expand="md">
+                                <Container fluid>
+                                    <Navbar.Toggle aria-controls="navbarScroll" className="btnToggle"/>
+                                    <Navbar.Collapse id="navbarScroll" >
+                                        <Nav className=" contMenu"
+                                            style={{ maxHeight: '200px' }} navbarScroll>
+                                                {menu.map((data => <Link to={data.url}> {data.title} </Link>))}
+                                        </Nav>
+                                    </Navbar.Collapse>
+                                </Container>
+                            </Navbar>
                         </div>
-                    <div>
-                        {/* <Form className="d-flex">
-                            <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form> */}
+                        <div>
+                            <CartWidget/>
+                        </div>
                     </div>
                 </div>
             </nav>

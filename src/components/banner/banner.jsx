@@ -8,7 +8,7 @@ export default function Banner(){
         {head:"Costumer Services",detail:"bakerTeam@gmail.com", url:"/contacUs"},
         {head:"Free Refund",detail:"until 30 days", url:"/"},
         {head:"Tracking Delivery",detail:"around the world", url:"/"},
-        {head:"Questions?",detail:"Write us", url:"/contacUs"}
+        {head:"Questions?",detail:"Write us", url:"/contactUs"}
     ]
     return(
         <div className="bannerContent">

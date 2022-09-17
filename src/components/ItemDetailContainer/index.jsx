@@ -8,7 +8,6 @@ import Banner from "../banner/banner"
 export default function ItemDetailContainer(){
     const idUrl = useParams().id;
     const [data, setData] = useState([]);
-    //console.log(idUrl)
  
     useEffect(() => {
         getProducts(idUrl)
@@ -21,14 +20,14 @@ export default function ItemDetailContainer(){
             <div className="max-width ">
                 <h1 className="title">Selection</h1>
                {
-               (data.length == 0)?
+               (data.length === 0)?
                <div className="loaderStile">
                 <MrMiyagi 
-                size={100}
-                lineWeight={3.5}
-                speed={0.75} 
-                color="rgb(220, 0, 240)" 
-                textAlign="center"
+                    size={100}
+                    lineWeight={3.5}
+                    speed={0.75} 
+                    color="rgb(220, 0, 240)" 
+                    textAlign="center"
                 />
                 </div>
                 :

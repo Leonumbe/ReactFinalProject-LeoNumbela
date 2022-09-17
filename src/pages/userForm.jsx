@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useState, useContext } from "react";
+import { useState} from "react";
 //Import to firebase
 import firestoreDB from "../services/firebase";
 import {addDoc, collection} from "firebase/firestore";
@@ -11,7 +11,6 @@ import {addDoc, collection} from "firebase/firestore";
 import {useNavigate} from "react-router-dom"
 //Sweet Alert
 import swal from 'sweetalert';
-import { Link } from "react-router-dom";
 
 const form={
     padding: "2rem",
@@ -25,7 +24,6 @@ const btnForm={
 
 export default function UserForm(){
 
-    
     const [userData, setUserData]= useState({
         Name:"", Surname:"", Email:"", Address:"", City:"", State:"", ZipCode:"", Topic:"", Text:""
     });
@@ -37,7 +35,6 @@ export default function UserForm(){
     
     async function handleSubmit(evt){
         evt.preventDefault();
-        console.log(userData);
         
         const customerContact = collection(firestoreDB, "customerContact");
         const formRef = await  addDoc(customerContact, userData);
@@ -79,27 +76,26 @@ export default function UserForm(){
                 <h3 className="subtitle mb-3">We want to know about you, write us ....</h3>
             
                 <Form onSubmit={handleSubmit} onReset={handleReset} style={form}>
-                <Row className="mb-2">
-                    <Form.Group as={Col} >
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control onChange={handleOnChange} name="Name" value={userData.Name} type="text" placeholder="Warren" />
-                    </Form.Group>
-                    <Form.Group as={Col} >
-                        <Form.Label >Surname</Form.Label>
-                        <Form.Control onChange={handleOnChange} name="Surname" value={userData.Surname} type="text" placeholder="Buffet" />
-                    </Form.Group>
-                </Row>
-                <Row className="mb-2">
-                    <Form.Group as={Col}>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control onChange={handleOnChange} name="Email" value={userData.Email} type="email" placeholder="Enter email" />
-                    </Form.Group>
-                    <Form.Group as={Col}     >
-                        <Form.Label>Address</Form.Label>
-                        <Form.Control onChange={handleOnChange} name="Address" value={userData.Address}  placeholder="1234 Main St" />
-                    </Form.Group>
-                </Row>
-
+                    <Row className="mb-2">
+                        <Form.Group as={Col} >
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control onChange={handleOnChange} name="Name" value={userData.Name} type="text" placeholder="Warren" />
+                        </Form.Group>
+                        <Form.Group as={Col} >
+                            <Form.Label >Surname</Form.Label>
+                            <Form.Control onChange={handleOnChange} name="Surname" value={userData.Surname} type="text" placeholder="Buffet" />
+                        </Form.Group>
+                    </Row>
+                    <Row className="mb-2">
+                        <Form.Group as={Col}>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control onChange={handleOnChange} name="Email" value={userData.Email} type="email" placeholder="Enter email" />
+                        </Form.Group>
+                        <Form.Group as={Col}     >
+                            <Form.Label>Address</Form.Label>
+                            <Form.Control onChange={handleOnChange} name="Address" value={userData.Address}  placeholder="1234 Main St" />
+                        </Form.Group>
+                    </Row>
                     <Row className="mb-3">
                         <Form.Group as={Col}>
                             <Form.Label>City</Form.Label>
@@ -142,7 +138,6 @@ export default function UserForm(){
                             Submit
                         </Button>
                     </div>
-
                 </Form>
             </div>
         </section>

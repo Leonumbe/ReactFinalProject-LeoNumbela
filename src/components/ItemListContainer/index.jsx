@@ -13,11 +13,8 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 export default function ItemListContainer(props){
     const filterCat = useParams().category;
     const [data, setData] = useState([]);
-    //console.log(useParams())   
-    //console.log(filterCat)  
 
     useEffect(() => {
-        
         getProducts().then((respuesta) => {
             if(filterCat){
                 const apiDataCollection = collection(firestoreDB, "apiDataFull");
@@ -30,7 +27,6 @@ export default function ItemListContainer(props){
                 })
                 setTimeout( () => setData(docData), 500)
                 })
-
             }else{
                 setData(respuesta)
             }
@@ -43,14 +39,14 @@ export default function ItemListContainer(props){
             <section className="title" id="Product">
                 <div className="max-width ">
                 {
-                (data.length == 0)?
+                (data.length === 0)?
                     <div className="loaderStile">
                         <MrMiyagi 
-                        size={200}
-                        lineWeight={3.5}
-                        speed={0.75} 
-                        color="rgb(220, 0, 240)" 
-                        textAlign="center"
+                            size={200}
+                            lineWeight={3.5}
+                            speed={0.75} 
+                            color="rgb(220, 0, 240)" 
+                            textAlign="center"
                         />
                     </div>:
                     <>

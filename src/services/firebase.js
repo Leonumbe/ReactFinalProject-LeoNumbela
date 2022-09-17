@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
 //base de datos
@@ -18,7 +17,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const firestoreDB = getFirestore(app);
-const analytics = getAnalytics(app);
 
 export async function saveProductsToFirebase(){
   const apiDataProducts = collection(firestoreDB, "apiDataFull")

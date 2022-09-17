@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faInstagram  } from '@fortawesome/free-brands-svg-icons' ;
 import { faCopyright } from '@fortawesome/free-solid-svg-icons' ;
 
-
 export default function Footer(){
 
 const navbarFooter=[

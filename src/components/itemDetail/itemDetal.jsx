@@ -1,6 +1,5 @@
 import React from "react";
 import "./main.css"
-
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { toast } from 'react-toastify';
@@ -17,7 +16,7 @@ export default function CardsSelected({id, name, category, price, rating, image,
       
     const cartQty = 0; 
     const [countData, setCountData] = useState(cartQty);
-    const {AddToCart, IsInCard, ReduceStock} = useContext(cartContext)
+    const {AddToCart, IsInCard} = useContext(cartContext)
     
     function HandleAdd(count){
         setCountData(count)
@@ -35,7 +34,6 @@ export default function CardsSelected({id, name, category, price, rating, image,
         const itemToCart ={id, name, category, price, rating, image, description, stock, count}    
         AddToCart(itemToCart);
         IsInCard(itemToCart.id)
-        //ReduceStock(itemToCart)
     }
 
     return (

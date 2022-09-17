@@ -6,9 +6,6 @@ import firestoreDB from "../../services/firebase";
 import {addDoc, collection, writeBatch, where, query, documentId, getDocs} from "firebase/firestore";
 //Boostrap
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 //Sweet Alert
 import swal from 'sweetalert';
 
@@ -46,34 +43,21 @@ export default function CheckOutForm(){
          const collectionRef = collection(firestoreDB, "purchaseOrders") ;
          const docRef = await  addDoc(collectionRef, purchaseTicket);
          setPurchaseSucess({id: docRef.id, status: true})
-         //console.log(purchaseSucess)
-         //Clear()
          
-         //ajuste de stock por writebatch
+         //ajuste de stock por batch
          const collectionApiDataFull = collection(firestoreDB, "apiDataFull") ;
-         //1ro mapeo carrito por id
          const dataIds = cart.map((item)=>item.id);
-         //genero una query para pegruntar a data los prod que tengo
-        const q = query(collectionApiDataFull, where(documentId(), "in", dataIds));
-        // guardo el write en una variable
-        let batch = writeBatch(firestoreDB)
+         const q = query(collectionApiDataFull, where(documentId(), "in", dataIds));
+         let batch = writeBatch(firestoreDB)
 
-        // ahora pido la data a firebase
-        getDocs(q).then((response)=>{
+         getDocs(q).then((response)=>{
             response.docs.forEach((doc)=>{
-                //creo constante para identif id con id
                 const itemUpDate = cart.find((item)=>item.id === doc.id)
-                //console.log(itemUpDate)
                 if(doc.data().stock >= itemUpDate.count){
                    batch.update(doc.ref,{
                     stock: doc.data().stock - itemUpDate.count
                    })     
                 }
-                //else{
-                //     //esta condicion no se va a cumplir por el ctrol de stock en el item count
-                //     //[].push(doc.id)
-                //     alert("El producto: "+itemUpDate.id+ "no cuenta con el stock solicitado")
-                // }
             batch.commit()
             })
         })
@@ -97,7 +81,6 @@ export default function CheckOutForm(){
     }
     if(purchaseSucess.status === true){
         return(
-           
             swal({
                 icon: "success",
                 title:`Thanks You! Your purchase was successfully processed`,
@@ -106,17 +89,6 @@ export default function CheckOutForm(){
                 
             }),
             Clear()
-
-            // Body del modal creado              
-            // <div>
-            //     <h1 className="display-3">Thanks You{userData.Name}!</h1> 
-            //     <p>Your purchase was successfully processed</p>
-            //     <p>Your code is: {purchaseSucess.id}</p>
-            //     <p className="lead"><strong>Please check your email {userData.Email}</strong> for further instructions on how to complete your shopping</p>
-            //     <button onClick={()=>{Clear()}} className={"btnAdd"} >
-            //     Confirm
-            //     </button>
-            // </div>
         )
     }
     return(
@@ -138,17 +110,14 @@ export default function CheckOutForm(){
                     <Form.Label>Phone</Form.Label>
                     <Form.Control onChange={handleOnChange} name="Phone" value={userData.Phone} type="number" placeholder="112334455" />
                 </Form.Group>
-                
                 <div style={contButtons} >
-
-                <button className="btnBackB" type="reset">
-                    Reset
-                </button>
-                <button className="btnAddB" type="submit">
-                    Submit
-                </button>
+                    <button className="btnBackB" type="reset">
+                        Reset
+                    </button>
+                    <button className="btnAddB" type="submit">
+                        Submit
+                    </button>
                 </div>
-
             </Form>
         </>
     );
