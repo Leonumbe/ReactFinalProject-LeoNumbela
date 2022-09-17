@@ -1,25 +1,34 @@
-**Ecommerce final project || React by CoderHouse
+# E-commerce || Final Project LeoNumbela
 
-[SPA] single page aplication, Simulates being an online store selling Sneackers, where the items are hosted on FireBase.
+## `React by CoderHouse`
+
+### [SPA] single page aplication:
+
+Simulates being an online store selling Sneackers, where the items are hosted on FireBase.
 
 The user will be able to live the complete purchase experience, delete and add the product. 
+
 See the order total and complete the purchase by filling out a form.
+
 A unique id is generated for the transaction and creates a new object in firebase with customer data and chosen products.
 
-I used for this page:
-React JS
-React Router Dom
-components, states and context
-React Boostraps for navbar and cards
-css with camelCase Styles
-FireBase how database
-Sweet alert
-stopper (Slider)
-fontAwesome
-Toastify
+## I used for this page:
+- React JS
+- React Router Dom
+- Components, states and context
+- React Boostraps for navbar and cards
+- Css with camelCase Styles
+- FireBase how database
+- Netlify
+- Sweet alert
+- stopper (Slider)
+- FontAwesome
+- Toastify
 
-This is the dependences installed:
-  "dependencies": {
+
+
+# This were the dependences installed:
+##  Dependencies: {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.2",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
@@ -43,6 +52,7 @@ This is the dependences installed:
 
 All the repository was pushed to GitHUb
 
+#
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
