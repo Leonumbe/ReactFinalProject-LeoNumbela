@@ -8,7 +8,7 @@ import Banner from "../banner/banner"
 export default function ItemDetailContainer(){
     const [data, setData] = useState([]);
     const idUrl = useParams().id;
- 
+  
     useEffect(() => {
         getProducts(idUrl)
         .then((respuesta) => setData(respuesta))

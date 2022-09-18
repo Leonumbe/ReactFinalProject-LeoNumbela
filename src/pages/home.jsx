@@ -3,9 +3,9 @@ import "./home.css"
 export default function Home(){
     
     const brandMessage =[
-        {textA: "We don't have all the models..."},
-        {textB:"We only have the best!"},
-        {textC:"Baker.", textC2:"team"}
+        {text: "We don't have all the models..."},
+        {text:"We only have the best!"},
+        {text:"Baker.", textC2:"team"}
     ]
     return(
         <div className="home" >
@@ -18,9 +18,7 @@ export default function Home(){
                         {brandMessage.map((item)=>{
                             return(
                                 <>
-                                    <h1 className="homeText">{item.textA}</h1>
-                                    <h1 className="homeText">{item.textB}</h1>
-                                    <h1 className="homeText">{item.textC}<span className="homeTextSpam">{item.textC2}</span></h1>
+                                    <h1 className="homeText">{item.text}<span className="homeTextSpam">{item.textC2}</span></h1>
                                 </>
                                 )
                             }

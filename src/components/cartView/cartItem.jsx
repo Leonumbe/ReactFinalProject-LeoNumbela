@@ -3,9 +3,9 @@ import { faTrash} from '@fortawesome/free-solid-svg-icons' ;
 import React from 'react';
 import  "./main.css";
 
-export default function CartItem({key,id,image,name,price,stock,count, Indice, RemoveItem}){
+export default function CartItem({id,image,name,price,count, Indice, RemoveItem}){
     return(
-        <div class="cartItemContent" >
+        <div className="cartItemContent" >
             <div className="CartItemImage">
                 <img className="cartItemImage"  src={image}  alt="ss"/>
             </div>

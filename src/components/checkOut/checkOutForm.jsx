@@ -37,7 +37,6 @@ export default function CheckOutForm(){
 
     async function  handleSubmit(event){
          event.preventDefault();
-         console.log(purchaseTicket);
          setUserData({Name:"", Surname:"", Email:"", Phone:"",});
 
          const collectionRef = collection(firestoreDB, "purchaseOrders") ;
