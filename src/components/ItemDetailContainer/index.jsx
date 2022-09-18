@@ -22,16 +22,16 @@ export default function ItemDetailContainer(){
                {
                (data.length === 0)?
                <div className="loaderStile">
-                <MrMiyagi 
-                    size={100}
-                    lineWeight={3.5}
-                    speed={0.75} 
-                    color="rgb(220, 0, 240)" 
-                    textAlign="center"
-                />
+                    <MrMiyagi 
+                        size={100}
+                        lineWeight={3.5}
+                        speed={0.75} 
+                        color="rgb(220, 0, 240)" 
+                        textAlign="center"
+                    />
                 </div>
                 :
-                <div className= " d-flex flex-row flex-wrap">
+                <div className= "d-flex flex-row flex-wrap">
                     <CardsSelected 
                         key={data.id}
                         id={data.id}

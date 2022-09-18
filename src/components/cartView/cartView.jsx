@@ -22,7 +22,7 @@ export default function CartView(){
         <section className="title">
             <div className="max-width ">
             {
-             (cart.length == 0)?
+             (cart.length === 0)?
                 <>
                     <div className="emptyCartContent">
                     <img src="https://i.ibb.co/fqDvSdf/Empty-Cart.png" alt="Empty-Cart" border="0" />
