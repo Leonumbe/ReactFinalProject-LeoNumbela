@@ -1,22 +1,20 @@
-//import itemsData from "../apiData/apiData.jsx";
 import firestoreDB from "../services/firebase.js";
 import { getDoc,getDocs, collection, doc } from "firebase/firestore";
 
 export default function getProducts(idUrl) {
-    
     return new Promise((resolve, reject)=>{
-        //llamo un solo producto
+        //Producto destacado
         try{
             if(idUrl){
-            const apiDataCollection = collection(firestoreDB, "apiDataFull");
-            const docRef = doc(apiDataCollection, idUrl);
-            getDoc(docRef).then( snapshot => {
-                setTimeout( () => resolve(
-                    {...snapshot.data(), id: snapshot.id}
-                ), 1000)
+                const apiDataCollection = collection(firestoreDB, "apiDataFull");
+                const docRef = doc(apiDataCollection, idUrl);
+                getDoc(docRef).then( snapshot => {
+                    setTimeout( () => resolve(
+                        {...snapshot.data(), id: snapshot.id}
+                    ), 3000)
             })
             }else{
-                //llamo a todos los porductos
+                //toda la colleccion
                 const apiDataCollection = collection(firestoreDB, "apiDataFull");
                 getDocs(apiDataCollection).then( snapshot=>{
                 const docData = snapshot.docs.map(doc => {
@@ -24,13 +22,12 @@ export default function getProducts(idUrl) {
                         ...doc.data(), id: doc.id 
                     }
                 })
-                setTimeout( () => resolve(docData), 2000)
-                //console.log(docData)
+                setTimeout( () => resolve(docData), 5000)
                 });  
             }
         }catch{ 
-                reject(alert("No se encontro el producto solicitado"))
-            }
+            reject(alert("No se encontro el producto solicitado"))
+        }
     })
 };
 

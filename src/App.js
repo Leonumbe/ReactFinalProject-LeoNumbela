@@ -20,7 +20,6 @@ const headTitle = {
 };
 
 function App() {
-  //console.log(firestoreDB)
   return (
     <div className="Body">
       <BrowserRouter>

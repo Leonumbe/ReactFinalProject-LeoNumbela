@@ -1,9 +1,5 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
-
-//base de datos
-import apiData from "../apiData/apiData"
+import { getFirestore} from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDbuShKJUxEPEWQvY8QRbrVivLU30WevWM",
@@ -17,15 +13,5 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const firestoreDB = getFirestore(app);
-
-export async function saveProductsToFirebase(){
-  const apiDataProducts = collection(firestoreDB, "apiDataFull")
-  //itero la lista con for of
-  for(let item of apiData){
-    const docRef = await addDoc(apiDataProducts, item )
-    console.log("array de productos: "+ docRef)
-  }
-} 
-
 
 export default firestoreDB;

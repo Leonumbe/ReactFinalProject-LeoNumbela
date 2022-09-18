@@ -69,9 +69,8 @@ export default function UserForm(){
             )
         }
         return(
-            <div>
         <section className="title" id="Home">
-        <div className="max-width ">
+            <div className="max-width ">
                 <h1 className="title">Write Us</h1>
                 <h3 className="subtitle mb-3">We want to know about you, write us ....</h3>
             
@@ -141,6 +140,5 @@ export default function UserForm(){
                 </Form>
             </div>
         </section>
-        </div>
     );
 }

@@ -20,8 +20,8 @@ export function CartContextProvider({children}){
             setCart([...cart, item]) 
             Badge(item.count)
         }
-      
     }
+
     function IsInCard(itemId){
         return (cart.some((element => element.id === itemId)))
     }
