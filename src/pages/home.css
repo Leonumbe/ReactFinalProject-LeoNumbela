@@ -17,7 +17,7 @@
 }
 
 .homeContent{
-    padding: 3rem 0rem;
+    padding: 10rem 0rem 1rem;
     display: flex;
     flex-flow: row-reverse nowrap ;
     justify-content: space-around;
@@ -40,6 +40,9 @@
 
 /*-----------------------------------------*/
 @media only screen and (max-width: 1000px){
+    .homeContent{
+        padding: 9.5rem 0rem 1rem;
+    }
     .imgHome{
         max-height: 450px;
     }
@@ -52,7 +55,13 @@
     }
 }
 
+@media only screen and (max-width: 900px){
+    .homeContent{
+        padding: 7rem 0rem 1rem;
+    }
+}
 @media only screen and (max-width: 775px){
+   
     .imgHome{
         max-height: 400px;
     }
@@ -68,7 +77,6 @@
 
 @media only screen and (max-width: 600px){
     .homeContent{
-        padding: 3rem 0rem;
         flex-flow: wrap ;
     }
     .homePhrases{

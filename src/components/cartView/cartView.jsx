@@ -19,6 +19,7 @@ export default function CartView(){
 
     const {cart, RemoveItem, Clear, TotalPrice, Badge} = useContext(cartContext)
     return(
+        <div className="ContentItemListCont">
         <section className="title">
             <div className="max-width ">
             {
@@ -92,6 +93,7 @@ export default function CartView(){
             }
             </div>
         </section>
+        </div>
     )
 }
 

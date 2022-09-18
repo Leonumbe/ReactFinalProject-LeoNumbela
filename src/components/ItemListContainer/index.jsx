@@ -35,9 +35,9 @@ export default function ItemListContainer(props){
     }, [filterCat]);
 
     return(
-        <div>
+        <div className="ContentItemListCont">
             <section className="title" id="Product">
-                <div className="max-width ">
+                <div className="max-width">
                 {
                 (data.length === 0)?
                     <div className="loaderStile">

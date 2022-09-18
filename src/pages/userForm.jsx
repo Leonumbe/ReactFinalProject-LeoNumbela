@@ -69,6 +69,9 @@ export default function UserForm(){
             )
         }
         return(
+         
+        <div className="ContentItemListCont">
+
         <section className="title" id="Home">
             <div className="max-width ">
                 <h1 className="title">Write Us</h1>
@@ -140,5 +143,6 @@ export default function UserForm(){
                 </Form>
             </div>
         </section>
+        </div>   
     );
 }

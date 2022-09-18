@@ -16,6 +16,7 @@ export default function ItemDetailContainer(){
     }, []);
 
     return(
+        <div className="ContentItemListCont">
         <section className="title" id="itemDetail">
             <div className="max-width ">
                 <h1 className="title">Selection</h1>
@@ -48,5 +49,7 @@ export default function ItemDetailContainer(){
             <Banner/>
             </div>
         </section>
+        </div>
+
     )
 }
