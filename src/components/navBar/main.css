@@ -23,7 +23,7 @@
 .contNavB{
     display: flex;
     flex-flow: row wrap;
-    justify-content: start;
+    justify-content:flex-start;
     align-items: center;
 }
 .logo{
@@ -38,7 +38,7 @@
     padding: 3px;
 }
 .menu{
-    display: flex ;
+    display: flex;
 }
 .contMenu{
     list-style: none;

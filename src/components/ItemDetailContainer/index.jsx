@@ -6,8 +6,8 @@ import { MrMiyagi } from '@uiball/loaders'
 import Banner from "../banner/banner"
 
 export default function ItemDetailContainer(){
-    const idUrl = useParams().id;
     const [data, setData] = useState([]);
+    const idUrl = useParams().id;
  
     useEffect(() => {
         getProducts(idUrl)

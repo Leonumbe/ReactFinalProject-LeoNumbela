@@ -86,7 +86,6 @@ export default function CheckOutForm(){
                 title:`Thanks You! Your purchase was successfully processed`,
                 text: `Your PurchaseCode is: ${purchaseSucess.id} `,
                 button:`confirm`,
-                
             }),
             Clear()
         )

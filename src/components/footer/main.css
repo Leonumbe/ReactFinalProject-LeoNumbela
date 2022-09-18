@@ -56,7 +56,7 @@
 }
 .copyFrase, .socialMedia, .createName{
   display: flex;
-  justify-content: end;
+  justify-content:flex-end;
 }
 .createName{
   font-size: 13px;
